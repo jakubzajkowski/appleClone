@@ -8,10 +8,12 @@ import Home from './pages/Home/Home';
 
 
 export default function App() {
+  const mobile=window.matchMedia("(max-width: 950px)")
+  console.log(mobile)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home mobile={mobile}/>}></Route>
       </Routes>
     </BrowserRouter>
   );

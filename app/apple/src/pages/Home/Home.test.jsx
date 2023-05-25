@@ -4,7 +4,7 @@ import Home from './Home'
 
 
 test('test home page', () => {
-    render(<Home/>)
+    render(<Home mobile={{matches:true}}/>)
   
-    expect(screen.getByText('IPhone 14 Pro')).toBeDefined()
+    expect(screen.getByText('iPad Pro')).toBeDefined()
   })

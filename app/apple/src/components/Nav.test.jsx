@@ -1,10 +1,10 @@
 import {render, screen,fireEvent} from '@testing-library/react'
 import { expect,test } from 'vitest'
-import Navigation from './Nav'
+import Nav from './Nav'
 
 
 test('testing test', () => {
-    render(<Navigation/>)
+    render(<Nav mobile={{matches: false}}/>)
   
     expect(screen.getByText('Mac')).toBeDefined()
     expect(screen.getByText('Store')).toBeDefined()
