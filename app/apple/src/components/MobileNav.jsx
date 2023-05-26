@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import MobileSearchContainer from './MobileSearchContainer';
 import {AnimatePresence} from 'framer-motion';
 import MobileMenuContainer from './MobileMenuContainer';
+import MobileBagContainer from './MobileBagContainer';
 
 function MobileNavigation() {
     const [isOpenMenu,setIsOpenMenu]=useState(false)
@@ -37,6 +38,11 @@ function MobileNavigation() {
         <AnimatePresence>
                     {isOpenSearch && (
                        <MobileSearchContainer setIsOpenSearch={setIsOpenSearch} isOpenSearch={isOpenSearch}/>
+                    )}
+        </AnimatePresence>
+        <AnimatePresence>
+                    {isOpenBag && (
+                       <MobileBagContainer setIsOpenBag={setIsOpenBag} isOpenBag={isOpenBag}/>
                     )}
         </AnimatePresence>
     </div>
