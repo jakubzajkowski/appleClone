@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Bar from "./Bar";
+import Footer from '../../components/Footer';
 
 const Home=({mobile})=>{
     return <div style={{width:mobile.matches ? '100vw' : '99vw'}}>
@@ -72,6 +73,7 @@ const Home=({mobile})=>{
                     </Col>
                 </Row>
         </div>
+        <Footer mobile={mobile}/>
     </div>
 }
 
