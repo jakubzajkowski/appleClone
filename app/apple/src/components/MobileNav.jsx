@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Container from 'react-bootstrap/Container';
 import MobileSearchContainer from './MobileSearchContainer';
 import {AnimatePresence} from 'framer-motion';
 import MobileMenuContainer from './MobileMenuContainer';
@@ -46,9 +45,9 @@ function MobileNavigation() {
                     )}
         </AnimatePresence>
     </div>
-    <Container className='mt-5 p-1 text-center align-items-center' style={{fontSize:'0.9rem'}}>
+    <div className='mt-5 w-100 p-1 text-center align-items-center' style={{fontSize:'0.9rem',backgroundColor:'white'}}>
         <p className='my-2'>Get $200–$630 in credit toward iPhone 14 or iPhone 14 Pro when you trade in iPhone 11 or higher.1 <a style={{textDecoration:'none'}} href='#xd'>Shop iPhone</a></p>
-    </Container>
+    </div>
     </>
 )
 }

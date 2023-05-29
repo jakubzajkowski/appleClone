@@ -5,6 +5,7 @@ import './index.scss'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from './pages/Home/Home';
+import Store from './pages/Store/Store';
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home mobile={mobile}/>}></Route>
+        <Route path="/store" element={<Store mobile={mobile}/>}></Route>
       </Routes>
     </BrowserRouter>
   );
