@@ -1,9 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
+import router from "./routers/routes";
+import api from "./routers/api/api";
+import cors from 'cors'
 dotenv.config()
 const port:number = 3000 || process.env.PORT
 
 const app = express()
+
+app.use(cors())
+
+app.use(router)
+app.use(api)
 
 
 app.listen(port,()=>{
