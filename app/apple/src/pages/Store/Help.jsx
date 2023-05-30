@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 
-const News=({device_name,slogan,img,price,bg_color})=>{
-    const New=styled(motion.div)`
+const Help=({title,slogan,img,bg_color})=>{
+    const Panel=styled(motion.div)`
         background-color:white;
         border-radius:1rem;
         background-image:url(${img});
@@ -17,23 +17,20 @@ const News=({device_name,slogan,img,price,bg_color})=>{
     `
 
     return (
-        <New whileHover={{scale:1.02,boxShadow:'0px 0px 25px -5px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
+        <Panel whileHover={{scale:1.02,boxShadow:'0px 0px 25px 1px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
             <div className={(bg_color=='black' ? 'text-light p-4' : 'text-dark p-4')}>
-                <p style={{fontSize:'0.9rem'}}>{device_name}</p>
+                <p style={{fontSize:'0.9rem'}}>{title}</p>
                 <h4 className={(bg_color=='black' ? 'text-light' : 'text-dark')}>{slogan}</h4>
-                <p className={(bg_color=='black' ? 'text-light' : 'text-dark')}>{price}</p>
             </div>
-        </New>
+        </Panel>
     )
 }
 
-News.propTypes={
-    device_name: PropTypes.string,
+Help.propTypes={
     img: PropTypes.string,
-    price: PropTypes.string,
     slogan: PropTypes.string,
-    price_number: PropTypes.number,
+    title: PropTypes.string,
     bg_color: PropTypes.string
 }
 
-export default News
+export default Help

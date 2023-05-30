@@ -6,6 +6,7 @@ import StoreHeader from './StoreHeader';
 import StoreProductsCarousel from './StoreProductsCarousel';
 import StoreNewsCarousel from './StoreNewsCarousel';
 import StoreInfoCarousel from './StoreInfoCarousel';
+import StoreHelpCarousel from './StoreHelpCarousel';
 
 const Store=({mobile})=>{
 
@@ -18,8 +19,9 @@ const Store=({mobile})=>{
         <Nav mobile={mobile}/>
         <StoreContainer>
             <StoreHeader />
-            <StoreProductsCarousel/>
-            <StoreNewsCarousel/>
+            <StoreProductsCarousel />
+            <StoreNewsCarousel />
+            <StoreHelpCarousel />
             <StoreInfoCarousel />
         </StoreContainer>
         <Footer mobile={mobile}/>
