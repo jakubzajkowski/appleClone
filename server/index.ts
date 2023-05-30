@@ -11,7 +11,7 @@ const app = express()
 app.use(cors())
 
 app.use(router)
-app.use(api)
+app.use('/api',api)
 
 
 app.listen(port,()=>{

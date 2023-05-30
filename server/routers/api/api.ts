@@ -1,10 +1,8 @@
 import express from 'express'
-
+import { ApiNewsController } from '../../controllers/ApiNewsController';
 
 const api = express.Router();
 
-api.get('/api', function(req, res){
-    res.json({api:'true'})
-})
+api.get('/news', ApiNewsController)
 
 export default api

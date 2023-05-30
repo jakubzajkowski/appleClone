@@ -10,9 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model News {
   id String @id @default(uuid()) @unique
-  name String
-  age Int 
+  device_name String
+  slogan String
+  price String
+  price_number Int
+  img String
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
