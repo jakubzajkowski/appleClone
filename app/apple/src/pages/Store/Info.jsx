@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 const style={
     backgroundColor:'white',
@@ -9,10 +10,10 @@ const style={
 
 const Info=({content,svg})=>{
     return (
-        <div className='p-4' style={style}>
+        <motion.div className='p-4' style={style} whileHover={{scale:1.02,boxShadow:'0px 0px 25px -10px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
             {svg}
             {content}
-        </div>
+        </motion.div>
     )
 }
 

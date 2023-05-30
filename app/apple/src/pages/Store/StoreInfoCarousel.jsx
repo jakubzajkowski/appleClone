@@ -1,7 +1,8 @@
 import { motion } from "framer-motion"
 import styled from 'styled-components'
 import Info from "./Info"
-import { useEffect,useState,useRef } from "react"
+import { MobileContext } from "../../context"
+import { useEffect,useState,useRef,useContext } from "react"
 import { StoreInfoList } from "./StoreInfoLists"
 const Carousel=styled(motion.div)`
     display:flex;
@@ -11,7 +12,7 @@ const Carousel=styled(motion.div)`
     padding: 0 0 0 25%;
     @media (max-width: 950px) {
         padding: 1rem;
-        width: 100%;
+        width: 300%;
     }
 `
 const Header=styled.h3`
@@ -26,8 +27,14 @@ const Header=styled.h3`
 const StoreInfoCarousel=()=>{
     const [width,setWidth]=useState(null)
     const carousel = useRef()
+    const mobile = useContext(MobileContext)
     useEffect(()=>{
-        setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/1.25)
+        if (mobile.matches){
+            setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/3)
+        }
+        else{
+            setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/1.25)
+        }
     })
     return(
         <div className='store__products_carousel' style={{overflow:'hidden',width:'100%'}}>

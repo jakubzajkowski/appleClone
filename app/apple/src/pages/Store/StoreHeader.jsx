@@ -6,6 +6,7 @@ const StoreHeader=()=>{
 
     const Header=styled.div`
         padding: 0 0 0 25%;
+        width:99%;
         @media (max-width: 950px) {
             padding: 1rem;
         }
