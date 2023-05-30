@@ -38,7 +38,7 @@ const StoreInfoCarousel=()=>{
     })
     return(
         <div className='store__products_carousel' style={{overflow:'hidden',width:'100%'}}>
-          <Header className="my-5"><span style={{color:'black'}}>The Apple Store difference.</span> Even more reasons to shop with us.</Header>
+          <Header className="my-3"><span style={{color:'black'}}>The Apple Store difference.</span> Even more reasons to shop with us.</Header>
           <Carousel ref={carousel} drag="x" dragConstraints={{right:0,left:-width}} >
             {StoreInfoList.map(info=><Info key={info.content} content={info.content} svg={info.svg}/>)}
           </Carousel>

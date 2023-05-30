@@ -17,6 +17,7 @@ model News {
   price String
   price_number Int
   img String
+  bg_color String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

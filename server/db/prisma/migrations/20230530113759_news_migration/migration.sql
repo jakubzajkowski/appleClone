@@ -6,6 +6,7 @@ CREATE TABLE `News` (
     `price` VARCHAR(191) NOT NULL,
     `price_number` INTEGER NOT NULL,
     `img` VARCHAR(191) NOT NULL,
+    `bg_color` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
