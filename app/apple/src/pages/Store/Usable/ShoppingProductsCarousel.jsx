@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useEffect,useState,useRef,useContext} from "react"
 import { MobileContext } from "../../../context"
 import CircularProgress from '@mui/material/CircularProgress';
-import BuyMacProduct from "./ShoppingProduct"
+import ShoppingProduct from "./ShoppingProduct"
 import PropTypes from 'prop-types'
 
 const Carousel=styled(motion.div)`
@@ -26,7 +26,7 @@ const Header=styled.h3`
     }
 `
 
-const ShoppingProductsCarousel=({data,isLoading,header})=>{
+const ShoppingProductsCarousel=({data,isLoading,header,bg_color})=>{
     const [width,setWidth]=useState(null)
     const carousel = useRef()
     const mobile = useContext(MobileContext)
@@ -41,8 +41,8 @@ const ShoppingProductsCarousel=({data,isLoading,header})=>{
     return(
         <div className='store__products_carousel' style={{overflow:'hidden'}}>
            <Header className="my-3">{header}</Header>
-           <Carousel ref={carousel} drag="x" dragConstraints={{right:0,left:-width}} >
-            {isLoading ? <CircularProgress /> : data?.map(info=><BuyMacProduct key={info.id} img={info.img_0} colors={info.colors} price={info.price} device_name={info.device_name}/>)} 
+           <Carousel ref={carousel} drag="x" dragConstraints={{right:0,left:-width}}>
+            {isLoading ? <CircularProgress /> : data?.map(info=><ShoppingProduct key={info.id} bg_color={bg_color} img={info.img_1} colors={info.colors} price={info.price} device_name={info.device_name}/>)} 
            </Carousel>
         </div>
         )
@@ -51,7 +51,8 @@ const ShoppingProductsCarousel=({data,isLoading,header})=>{
 ShoppingProductsCarousel.propTypes={
     data: PropTypes.array,
     isLoading: PropTypes.bool,
-    header: PropTypes.any
+    header: PropTypes.any,
+    bg_color: PropTypes.string
 }
 
 export default ShoppingProductsCarousel

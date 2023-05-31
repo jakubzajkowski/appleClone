@@ -6,7 +6,7 @@ import StoreHeader from './Usable/ShoppingHeader';
 import StoreProductsCarousel from './StoreProductsCarousel';
 import StoreNewsCarousel from './StoreNewsCarousel';
 import StoreInfoCarousel from './StoreInfoCarousel';
-import ShoppingContentCarousel from './ShoppingContentCarousel';
+import ShoppingContentCarousel from './Usable/ShoppingContentCarousel';
 import { HelpList } from './HelpLists';
 
 const Store=({mobile})=>{

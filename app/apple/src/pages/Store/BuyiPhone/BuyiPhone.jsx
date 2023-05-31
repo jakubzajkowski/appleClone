@@ -12,13 +12,13 @@ import { ShopSavesLists } from '../shopSavesLists';
 import { ShopSupportsLists } from '../ShopSupportLists';
 
 
-const BuyMac=({mobile})=>{
-    const {data,error,isLoading}=useFetchApi('/api/mac')
+const BuyiPhone=({mobile})=>{
+    const {data,error,isLoading}=useFetchApi('/api/iphone')
     const BuyMacContainer=styled.div`
         margin: 3rem 0 0 0;
         width:100%;
     `
-    const text = <h1 style={{color:'black',fontWeight:'bold'}}>Shop Mac</h1>
+    const text = <h1 style={{color:'black',fontWeight:'bold'}}>Shop iPhone</h1>
     const productsHeader = <><span style={{color:'black'}}>All models.</span> Take your pick.</>
     const shoppingContentHeaderOne =<><span style={{color:'black'}}>Shopping guides.</span> Can’t decide? Start here.</>
     const shoppingContentHeaderTwo =<><span style={{color:'black'}}>Ways to save.</span> Find what works for you.</>
@@ -28,7 +28,7 @@ const BuyMac=({mobile})=>{
         <Nav mobile={mobile}/>
         <BuyMacContainer>
             <StoreHeader text={text}/>
-            <ShoppingProductsCarousel data={data} isLoading={isLoading} header={productsHeader} bg_color='white'/>
+            <ShoppingProductsCarousel data={data} isLoading={isLoading} header={productsHeader} bg_color='rgb(247,247,247)'/>
             <ShoppingContentCarousel header={shoppingContentHeaderOne} data={ShopGuidesLists}/>
             <ShoppingContentCarousel header={shoppingContentHeaderTwo} data={ShopSavesLists}/>
             <ShoppingContentCarousel header={shoppingContentHeaderThree} data={ShopSupportsLists}/>
@@ -37,8 +37,8 @@ const BuyMac=({mobile})=>{
     </div>
 }
 
-BuyMac.propTypes={
+BuyiPhone.propTypes={
     mobile: PropTypes.any,
 }
 
-export default BuyMac
+export default BuyiPhone

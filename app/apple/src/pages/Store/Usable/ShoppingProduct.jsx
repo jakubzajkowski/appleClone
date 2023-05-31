@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 
-const ShoppingProduct=({device_name,img,price,colors})=>{
-    const Mac=styled(motion.div)`
-        background-color:white;
+const ShoppingProduct=({device_name,img,price,colors,bg_color})=>{
+    const Box=styled(motion.div)`
+        background-color:${bg_color};
         border-radius:1rem;
         margin:1rem;
         width:100%;
@@ -31,19 +31,19 @@ const ShoppingProduct=({device_name,img,price,colors})=>{
         margin: 0.2rem;
     `
     const arrColors = colors.split(',')
-
+    const arrName = device_name.split('')
     return (
-        <Mac whileHover={{scale:1.02,boxShadow:'0px 0px 25px -5px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
+        <Box whileHover={{scale:1.02,boxShadow:'0px 0px 25px -5px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
             <div className='text-dark p-4'>
                 <h4>{device_name}</h4>
-                <img src={img} alt="mac" className='d-block mx-auto w-75 my-4' style={{pointerEvents:'none'}}/>
+                <img src={img} alt="mac" className={(arrName[0]=='i') ? 'w-100 d-block mx-auto my-4' : 'w-75 d-block mx-auto my-4'} style={{pointerEvents:'none'}}/>
                 <div className='d-flex justify-content-center my-2'>
                     {arrColors.map(color=><ColorDots key={color} color={color}/>)}
                 </div>
                 <p className='text-dark'>{price}</p>
                 <BuyButton>Buy</BuyButton>
             </div>
-        </Mac>
+        </Box>
     )
 }
 
@@ -51,7 +51,8 @@ ShoppingProduct.propTypes={
     device_name: PropTypes.string,
     img: PropTypes.string,
     price: PropTypes.string,
-    colors: PropTypes.string
+    colors: PropTypes.string,
+    bg_color: PropTypes.string
 }
 
 export default ShoppingProduct

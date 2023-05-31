@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import styled from 'styled-components'
-import ShoppingContentElement from "./Usable/ShoppingContentElement"
+import ShoppingContentElement from "./ShoppingContentElement"
 import { useEffect,useState,useRef,useContext} from "react"
-import { MobileContext } from "../../context"
+import { MobileContext } from "../../../context"
 import PropTypes  from 'prop-types'
 
 const Carousel=styled(motion.div)`

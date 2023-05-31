@@ -26,8 +26,8 @@ function DesktopNavigation() {
                 <NavDropdown.Item href="/store" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Store</NavDropdown.Item>
                 <NavDropdown.Item href="/store"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Shop The Lastest</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/store/buy-mac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Mac</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Ipad</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Iphone</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/store/buy-ipad"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Ipad</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/store/buy-iphone"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Iphone</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showMac} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowMac(!showMac)}  onMouseLeave={()=>setShowMac(!showMac)} title="Mac" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Mac</NavDropdown.Item>
