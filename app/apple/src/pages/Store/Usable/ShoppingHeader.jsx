@@ -1,8 +1,9 @@
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
-const StoreHeader=()=>{
+const StoreHeader=({text})=>{
 
     const Header=styled.div`
         padding: 0 0 0 25%;
@@ -15,7 +16,7 @@ const StoreHeader=()=>{
     return(
     <Header className='my-5 store__header'>
         <Row>
-            <Col md="5"><h1 style={{color:'rgb(90,90,90)',fontWeight:'bold'}}><span style={{color:'black'}}>Store.</span> The best way to buy the products you love.</h1></Col>
+            <Col md="5">{text}</Col>
             <Col md="5">
                 <ul style={{fontSize:'0.9rem'}}>
                     <li style={{listStyle:'none'}} className='d-flex align-items-center'>
@@ -37,5 +38,9 @@ const StoreHeader=()=>{
         </Row>
     </Header>)
 }
+StoreHeader.propTypes={
+    text:PropTypes.string
+}
+
 
 export default StoreHeader

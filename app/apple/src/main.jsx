@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from './pages/Home/Home';
 import Store from './pages/Store/Store';
 import { MobileContext } from './context';
+import BuyMac from './pages/Store/BuyMac/BuyMac';
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Home mobile={mobile}/>}></Route>
             <Route path="/store" element={<Store mobile={mobile}/>}></Route>
+            <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>

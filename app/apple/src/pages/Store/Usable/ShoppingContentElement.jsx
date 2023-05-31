@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 
-const Help=({title,slogan,img,bg_color})=>{
+const ShoppingContentElement=({title,slogan,img,bg_color})=>{
     const Panel=styled(motion.div)`
         background-color:white;
         border-radius:1rem;
@@ -26,11 +26,11 @@ const Help=({title,slogan,img,bg_color})=>{
     )
 }
 
-Help.propTypes={
+ShoppingContentElement.propTypes={
     img: PropTypes.string,
     slogan: PropTypes.string,
     title: PropTypes.string,
     bg_color: PropTypes.string
 }
 
-export default Help
+export default ShoppingContentElement

@@ -21,3 +21,68 @@ model News {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Iphone {
+  id String @id @default(uuid()) @unique
+  device_name String
+  slogan String
+  img_0 String
+  img_1 String
+  img_2 String
+  colors String
+  price String
+  price_number Int
+  display String
+  new_technology String
+  sos String
+  camera String
+  action_mode String
+  battery String
+  chip String
+  internet String
+  gb String
+  gb_multiple_price Int
+}
+model Mac {
+  id String @id @default(uuid()) @unique
+  device_name String
+  slogan String
+  img_0 String
+  img_1 String
+  img_2 String
+  colors String
+  price String
+  price_number Int
+  display String
+  camera String
+  battery String
+  chip String
+  core_cpu String
+  core_gpu String
+  ram String
+  storage String
+  mic String
+  weight String
+  touchid String
+  internet String
+  gb_multiple_price Int
+}
+model Ipad {
+  id String @id @default(uuid()) @unique
+  device_name String
+  slogan String
+  img_0 String
+  img_1 String
+  img_2 String
+  colors String
+  price String
+  price_number Int
+  display String
+  width String
+  camera String
+  chip String
+  connector String
+  touchid String
+  internet String
+  gb_multiple_price Int
+}
