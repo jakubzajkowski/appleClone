@@ -10,6 +10,7 @@ import { MobileContext } from './context';
 import BuyMac from './pages/Store/BuyMac/BuyMac';
 import BuyiPhone from './pages/Store/BuyiPhone/BuyiPhone';
 import BuyiPad from './pages/Store/BuyiPad/BuyiPad';
+import BuyCastomizeMac from './pages/Store/BuyMac/BuyCastomizeMac';
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
             <Route path="/store/buy-iphone" element={<BuyiPhone mobile={mobile}/>}></Route>
             <Route path="/store/buy-ipad" element={<BuyiPad mobile={mobile}/>}></Route>
+            <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac mobile={mobile}/>} />
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>

@@ -39,7 +39,7 @@ const StoreHeader=({text})=>{
     </Header>)
 }
 StoreHeader.propTypes={
-    text:PropTypes.string
+    text:PropTypes.object
 }
 
 

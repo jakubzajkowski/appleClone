@@ -32,6 +32,7 @@ const ShoppingProduct=({device_name,img,price,colors,bg_color})=>{
     `
     const arrColors = colors.split(',')
     const arrName = device_name.split('')
+    const query = device_name.replace(/\s+/g,"-");
     return (
         <Box whileHover={{scale:1.02,boxShadow:'0px 0px 25px -5px rgba(66, 68, 90, 1)'}} transition={{duration:0.5,ease:'easeInOut'}}>
             <div className='text-dark p-4'>
@@ -41,7 +42,7 @@ const ShoppingProduct=({device_name,img,price,colors,bg_color})=>{
                     {arrColors.map(color=><ColorDots key={color} color={color}/>)}
                 </div>
                 <p className='text-dark'>{price}</p>
-                <BuyButton>Buy</BuyButton>
+                <BuyButton><a className='text-decoration-none text-light' href={`/store/buy-mac/${query}`}>Buy</a></BuyButton>
             </div>
         </Box>
     )

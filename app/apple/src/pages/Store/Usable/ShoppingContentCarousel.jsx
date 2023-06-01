@@ -48,7 +48,7 @@ const ShoppingContentCarousel=({data,header})=>{
 }
 ShoppingContentCarousel.propTypes={
     data: PropTypes.array,
-    header: PropTypes.string
+    header: PropTypes.object
 }
 
 export default ShoppingContentCarousel
