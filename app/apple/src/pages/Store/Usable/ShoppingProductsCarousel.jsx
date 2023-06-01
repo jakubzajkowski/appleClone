@@ -10,7 +10,7 @@ const Carousel=styled(motion.div)`
     display:flex;
     justify-content:space-between;
     margin:0 0 3rem 0;
-    width:110%;
+    width:120%;
     padding: 0 0 0 25%;
     @media (max-width: 950px) {
         padding: 1rem;
@@ -35,7 +35,7 @@ const ShoppingProductsCarousel=({data,isLoading,header,bg_color})=>{
             setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/3.5)
         }
         else{
-            setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/1.1)
+            setWidth(carousel.current.scrollWidth-carousel.current.offsetWidth/1.2)
         }
     })
     return(

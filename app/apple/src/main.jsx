@@ -9,6 +9,7 @@ import Store from './pages/Store/Store';
 import { MobileContext } from './context';
 import BuyMac from './pages/Store/BuyMac/BuyMac';
 import BuyiPhone from './pages/Store/BuyiPhone/BuyiPhone';
+import BuyiPad from './pages/Store/BuyiPad/BuyiPad';
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/store" element={<Store mobile={mobile}/>}></Route>
             <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
             <Route path="/store/buy-iphone" element={<BuyiPhone mobile={mobile}/>}></Route>
+            <Route path="/store/buy-ipad" element={<BuyiPad mobile={mobile}/>}></Route>
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>
