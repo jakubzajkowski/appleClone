@@ -13,7 +13,7 @@ export const ApiMacNameController=async (req:express.Request,res:express.Respons
     if (req.params.name && typeof req.params.name === "string"){
         const query: string=req.params.name
         const condition:string = query.replace(/-/gi, " ");
-        const mac= await prisma.mac.findMany({where: {device_name: condition}})
+        const mac= await prisma.mac.findFirst({where: {device_name: condition}})
         try{
             res.json(mac)
         } catch {
