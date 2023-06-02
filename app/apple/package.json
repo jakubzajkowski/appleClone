@@ -15,6 +15,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.3",
+    "@popmotion/popcorn": "^0.4.4",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "framer-motion": "^10.12.16",

@@ -7,7 +7,6 @@ import { storage2TBList,storage8TBList } from './storageList'
 
 const Storage=({storage,price})=>{
     const [pick,setPick]= useState(null)
-    console.log(storage)
     if (storage=='2TB'){
         return <div>
            {storage2TBList.map(mem=><StorageElement pick={pick} setPick={setPick} key={mem.text} plus={mem.plus} price={price} text={mem.text}/>)}

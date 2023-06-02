@@ -20,7 +20,7 @@ const StorageElement=({text,plus,price,pick,setPick})=>{
     const {setStorageModify} = useContext(MacPriceContext)
     const handleSelect=()=>{
         setPick({text: text,plus: plus})
-        setStorageModify(Math.floor(price*plus))
+        setStorageModify({price:Math.floor(price*plus),storage:text})
     }
     return <div onClick={handleSelect} className={(pick?.text==text) ? 'border border-primary' : ''} style={styleMemBox}><h5 style={styleMemHeader}>{text}</h5><p className='mt-2'>+ ${Math.floor(price*plus)}.00</p></div>
 }

@@ -20,7 +20,7 @@ const MemoryElement=({text,plus,price,pick,setPick})=>{
     const {setMemoryModify} = useContext(MacPriceContext)
     const handleSelect=()=>{
         setPick({text: text,plus: plus})
-        setMemoryModify(Math.floor(price*plus))
+        setMemoryModify({price: Math.floor(price*plus),memory:text})
     }
     return <div onClick={handleSelect} className={(pick?.text==text) ? 'border border-primary' : ''} style={styleMemBox}><h5 style={styleMemHeader}>{text}</h5><p className='mt-2'>+ ${Math.floor(price*plus)}.00</p></div>
 }
