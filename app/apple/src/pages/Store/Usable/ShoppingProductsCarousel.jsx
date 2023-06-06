@@ -26,7 +26,7 @@ const Header=styled.h3`
     }
 `
 
-const ShoppingProductsCarousel=({data,isLoading,header,bg_color})=>{
+const ShoppingProductsCarousel=({data,isLoading,header,bg_color,device})=>{
     const [width,setWidth]=useState(null)
     const carousel = useRef()
     const mobile = useContext(MobileContext)
@@ -42,7 +42,7 @@ const ShoppingProductsCarousel=({data,isLoading,header,bg_color})=>{
         <div className='store__products_carousel' style={{overflow:'hidden'}}>
            <Header className="my-3">{header}</Header>
            <Carousel ref={carousel} drag="x" dragConstraints={{right:0,left:-width}}>
-            {isLoading ? <CircularProgress /> : data?.map(info=><ShoppingProduct key={info.id} bg_color={bg_color} img={info.img_1} colors={info.colors} price={info.price} device_name={info.device_name}/>)} 
+            {isLoading ? <CircularProgress /> : data?.map(info=><ShoppingProduct device={device} key={info.id} bg_color={bg_color} img={info.img_1} colors={info.colors} price={info.price} device_name={info.device_name}/>)} 
            </Carousel>
         </div>
         )
@@ -52,7 +52,8 @@ ShoppingProductsCarousel.propTypes={
     data: PropTypes.array,
     isLoading: PropTypes.bool,
     header: PropTypes.any,
-    bg_color: PropTypes.string
+    bg_color: PropTypes.string,
+    device: PropTypes.string,
 }
 
 export default ShoppingProductsCarousel

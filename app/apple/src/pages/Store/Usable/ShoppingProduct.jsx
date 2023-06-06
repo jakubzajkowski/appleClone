@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 
-const ShoppingProduct=({device_name,img,price,colors,bg_color})=>{
+const ShoppingProduct=({device_name,img,price,colors,bg_color,device})=>{
     const Box=styled(motion.div)`
         background-color:${bg_color};
         border-radius:1rem;
@@ -42,7 +42,7 @@ const ShoppingProduct=({device_name,img,price,colors,bg_color})=>{
                     {arrColors.map(color=><ColorDots key={color} color={color}/>)}
                 </div>
                 <p className='text-dark'>{price}</p>
-                <BuyButton><a className='text-decoration-none text-light' href={`/store/buy-mac/${query}`}>Buy</a></BuyButton>
+                <BuyButton><a className='text-decoration-none text-light' href={`/store/buy-${device}/${query}`}>Buy</a></BuyButton>
             </div>
         </Box>
     )
@@ -53,6 +53,7 @@ ShoppingProduct.propTypes={
     img: PropTypes.string,
     price: PropTypes.string,
     colors: PropTypes.string,
+    device: PropTypes.string,
     bg_color: PropTypes.string
 }
 

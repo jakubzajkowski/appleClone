@@ -13,7 +13,7 @@ function MobileNavigation() {
         width: '100%',
         display:'flex',
         position:'fixed',
-        zIndex:1000,
+        zIndex:1000000,
         top:0,
         justifyContent:'space-between',
         padding: '0.5rem',

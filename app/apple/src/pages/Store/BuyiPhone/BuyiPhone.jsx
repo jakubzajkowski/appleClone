@@ -28,7 +28,7 @@ const BuyiPhone=({mobile})=>{
         <Nav mobile={mobile}/>
         <BuyMacContainer>
             <StoreHeader text={text}/>
-            <ShoppingProductsCarousel data={data} isLoading={isLoading} header={productsHeader} bg_color='rgb(247,247,247)'/>
+            <ShoppingProductsCarousel device='iphone' data={data} isLoading={isLoading} header={productsHeader} bg_color='rgb(247,247,247)'/>
             <ShoppingContentCarousel header={shoppingContentHeaderOne} data={ShopGuidesLists}/>
             <ShoppingContentCarousel header={shoppingContentHeaderTwo} data={ShopSavesLists}/>
             <ShoppingContentCarousel header={shoppingContentHeaderThree} data={ShopSupportsLists}/>
