@@ -14,6 +14,7 @@ import BuyCastomizeMac from './pages/Store/BuyMac/BuyCastomizeMac';
 import BuyCastomizeiPhone from './pages/Store/BuyiPhone/BuyCastomizeiPhone';
 import BuyCastomizeiPad from './pages/Store/BuyiPad/BuyCastomizeiPad';
 import IPadPro from './pages/iPadPro/iPadPro';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 export default function App() {
@@ -30,7 +31,7 @@ export default function App() {
             <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac mobile={mobile}/>} />
             <Route path="/store/buy-iphone/:name" element={<BuyCastomizeiPhone mobile={mobile}/>} />
             <Route path="/store/buy-ipad/:name" element={<BuyCastomizeiPad mobile={mobile}/>} />
-            <Route path="/ipad-pro" element={<IPadPro mobile={mobile} />} />
+            <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro mobile={mobile} /></ParallaxProvider>} />
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>
