@@ -40,13 +40,13 @@ function DesktopNavigation() {
                 <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Ipad</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Explore All Ipad</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Air</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Pro</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/ipad-pro"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Pro</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>IPad</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showIphone} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowIphone(!showIphone)}  onMouseLeave={()=>setShowIphone(!showIphone)} title="Iphone" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore IPhone</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>Explore All IPhone</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 14 Pro</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/iphone-14-pro"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 14 Pro</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 14</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 13</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 12</motion.h3></NavDropdown.Item>
