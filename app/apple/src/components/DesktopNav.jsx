@@ -34,7 +34,7 @@ function DesktopNavigation() {
                 <NavDropdown.Item href="#action/3.2"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>Explore All Mac</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Air</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Pro</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>IMac</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/imac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>IMac</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showIpad} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowIpad(!showIpad)}  onMouseLeave={()=>setShowIpad(!showIpad)} title="Ipad" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Ipad</NavDropdown.Item>
