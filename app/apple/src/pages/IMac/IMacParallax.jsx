@@ -28,6 +28,9 @@ const IMacParallax=({mobile})=>{
                 <motion.h3 className='w-25' style={{position:'relative',top:'-100%'}} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{duration:1,delay:0.2}}>A perfectly poised stand. And blazingly fast Thunderbolt ports.</motion.h3>
             </Parallax>}
             <img className="w-75 mx-auto d-block my-5" src="https://www.apple.com/hk/en/safari/images/overview/performance_4k_streaming__brrypnzyysya_large.jpg" alt="" />
+            <h2 className='w-75 mx-auto' style={{color:'blue'}}>See the big picture.</h2>
+            <h2 className='w-75 mx-auto'>And all the details.</h2>
+            <h5 className='w-75 mx-auto mb-5'>See it all in sharp, glorious detail on the immersive 24‑inch 4.5K Retina display.1 The P3 wide color gamut brings what you’re watching to life in over a billion colors. Images shine with a brilliant 500 nits of brightness. Industry-leading anti‑reflective coating delivers greater comfort and readability. And True Tone technology automatically adjusts the color temperature of your display to the ambient light of your environment, for a more natural viewing experience. So whether you’re editing photos, working on presentations, or watching your favorite shows and movies, everything looks incredible on iMac.</h5>
         </ParallaxProvider>
     )
 }
