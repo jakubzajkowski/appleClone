@@ -30,15 +30,15 @@ function DesktopNavigation() {
                 <NavDropdown.Item href="/store/buy-iphone"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showStore ? 'visible' : 'hidden'}>Iphone</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showMac} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowMac(!showMac)}  onMouseLeave={()=>setShowMac(!showMac)} title="Mac" menuVariant="dark" id="nav-dropdown-dark-example">
-                <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Mac</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>Explore All Mac</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="/mac" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Mac</NavDropdown.Item>
+                <NavDropdown.Item href="/mac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>Explore All Mac</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Air</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Pro</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/imac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>IMac</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showIpad} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowIpad(!showIpad)}  onMouseLeave={()=>setShowIpad(!showIpad)} title="Ipad" menuVariant="dark" id="nav-dropdown-dark-example">
-                <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Ipad</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Explore All Ipad</motion.h3></NavDropdown.Item>
+                <NavDropdown.Item href="ipad" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Ipad</NavDropdown.Item>
+                <NavDropdown.Item href="ipad"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Explore All Ipad</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Air</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/ipad-pro"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Pro</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>IPad</motion.h3></NavDropdown.Item>

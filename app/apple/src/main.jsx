@@ -17,7 +17,21 @@ import IPadPro from './pages/iPadPro/iPadPro';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import IPhone14Pro from './pages/iPhone14Pro/IPhone14Pro';
 import IMac from './pages/IMac/IMac';
+import ExploreAllMac from './pages/Mac/ExploreAllMac';
+import ExploreAllIpad from './pages/IPad/ExploreAllIpad';
 
+// const reducer = (state,action)=>{
+//     switch (action.type){
+//         case "increment":
+//           state = {number:state.number+1,names:[...state.names,action.payload]}
+//           break
+//         case "decrement":
+//           state = {number:state.number-1,names:[...state.names,action.payload]}
+//           break
+//     }
+//     return state
+// }
+// const store = createStore(reducer, {names:['wojtek','Alan'],number:1})
 
 export default function App() {
   const mobile=window.matchMedia("(max-width: 950px)")
@@ -36,6 +50,8 @@ export default function App() {
             <Route path="/iphone-14-pro" element={<IPhone14Pro mobile={mobile}/>} />
             <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro mobile={mobile} /></ParallaxProvider>} />
             <Route path="/imac" element={<IMac mobile={mobile}/>} />
+            <Route path="/mac" element={<ExploreAllMac mobile={mobile}/>} />
+            <Route path="/ipad" element={<ExploreAllIpad mobile={mobile}/>} />
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>
