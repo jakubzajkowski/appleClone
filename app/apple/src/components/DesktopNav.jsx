@@ -32,30 +32,21 @@ function DesktopNavigation() {
               <NavDropdown className='mx-3' show={showMac} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowMac(!showMac)}  onMouseLeave={()=>setShowMac(!showMac)} title="Mac" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="/mac" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Mac</NavDropdown.Item>
                 <NavDropdown.Item href="/mac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>Explore All Mac</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Air</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>MacBook Pro</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/imac"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showMac ? 'visible' : 'hidden'}>IMac</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showIpad} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowIpad(!showIpad)}  onMouseLeave={()=>setShowIpad(!showIpad)} title="Ipad" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="ipad" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Ipad</NavDropdown.Item>
                 <NavDropdown.Item href="ipad"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Explore All Ipad</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Air</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/ipad-pro"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>Ipad Pro</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIpad ? 'visible' : 'hidden'}>IPad</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showIphone} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowIphone(!showIphone)}  onMouseLeave={()=>setShowIphone(!showIphone)} title="Iphone" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="/iphone" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore IPhone</NavDropdown.Item>
                 <NavDropdown.Item href="/iphone"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>Explore All IPhone</motion.h3></NavDropdown.Item>
                 <NavDropdown.Item href="/iphone-14-pro"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 14 Pro</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 14</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 13</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showIphone ? 'visible' : 'hidden'}>IPhone 12</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showTvAndHome} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowTvAndHome(!showTvAndHome)}  onMouseLeave={()=>setShowTvAndHome(!showTvAndHome)} title="TV & Home" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="/tv-home" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore TV & Home</NavDropdown.Item>
                 <NavDropdown.Item href="/tv-home"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showTvAndHome ? 'visible' : 'hidden'}>Explore TV & Home</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showTvAndHome ? 'visible' : 'hidden'}>Apple TV 4K</motion.h3></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4"><motion.h3 transition={{duration:0.5}} variants={variants} animate={showTvAndHome ? 'visible' : 'hidden'}>HomePod</motion.h3></NavDropdown.Item>
               </NavDropdown>
               <NavDropdown className='mx-3' show={showSupport} style={{fontSize:'0.8rem'}} onMouseEnter={()=>setShowSupport(!showSupport)}  onMouseLeave={()=>setShowSupport(!showSupport)} title="Support" menuVariant="dark" id="nav-dropdown-dark-example">
                 <NavDropdown.Item href="#action/3.1" style={{width:'99vw',margin:'0 0 0.6rem 0'}}>Explore Support</NavDropdown.Item>
