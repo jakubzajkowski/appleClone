@@ -19,6 +19,8 @@ import IPhone14Pro from './pages/iPhone14Pro/IPhone14Pro';
 import IMac from './pages/IMac/IMac';
 import ExploreAllMac from './pages/Mac/ExploreAllMac';
 import ExploreAllIpad from './pages/IPad/ExploreAllIpad';
+import ExploreAllIphone from './pages/iPhone/ExploreAllIphone';
+import TVandHome from './pages/TV&Home/TV&Home';
 
 // const reducer = (state,action)=>{
 //     switch (action.type){
@@ -52,6 +54,8 @@ export default function App() {
             <Route path="/imac" element={<IMac mobile={mobile}/>} />
             <Route path="/mac" element={<ExploreAllMac mobile={mobile}/>} />
             <Route path="/ipad" element={<ExploreAllIpad mobile={mobile}/>} />
+            <Route path="/iphone" element={<ExploreAllIphone mobile={mobile}/>} />
+            <Route path="/tv-home" element={<TVandHome mobile={mobile}/>} />
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>
