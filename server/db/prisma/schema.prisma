@@ -86,3 +86,21 @@ model Ipad {
   internet String
   gb_multiple_price Int
 }
+model User {
+  id String @id @default(uuid()) @unique
+  first_name String
+  last_name String
+  country String
+  birthday String
+  email String @unique
+  password String
+  phone_number Int
+  order Order[]
+  createdAt  DateTime @default(now())
+}
+model Order {
+    id Int @id @default(autoincrement())
+    user User @relation(fields: [userId], references: [id])
+    userId String @unique
+    date DateTime @default(now())
+}
