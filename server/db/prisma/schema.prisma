@@ -94,7 +94,7 @@ model User {
   birthday String
   email String @unique
   password String
-  phone_number Int
+  phone_number String
   order Order[]
   createdAt  DateTime @default(now())
 }

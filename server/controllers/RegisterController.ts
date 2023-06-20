@@ -10,7 +10,7 @@ interface userDataType {
     birthday :string,
     email: string,
     password : string,
-    phone_number : number
+    phone_number : string
   }
 
 export const RegisterController=async (req:express.Request,res:express.Response)=>{

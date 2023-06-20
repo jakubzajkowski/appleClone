@@ -5,26 +5,30 @@ import Nav from '../../components/Nav'
 import CountryOptions from './CountryOptions'
 import {InputText,Select,RegisterBtn} from './Styled'
 import { useState } from 'react'
-import Validate from '../../hooks/useValidate'
+import Validate from '../../helpers/Validate'
+import AxiosRegister from '../../helpers/AxiosRegister'
 
 const Register=({mobile})=>{
-    const [firstName,setFirstName]=useState(null)
-    const [lastName,setLastName]=useState(null)
-    const [country,setCountry]=useState(null)
-    const [birthday,setBirthday]=useState(null)
+    const [firstName,setFirstName]=useState('')
+    const [lastName,setLastName]=useState('')
+    const [country,setCountry]=useState('Afganistan')
+    const [birthday,setBirthday]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
-    const [confirmPassword,setConfirmPassword]=useState(null)
-    const [phoneNumber,setPhoneNumber]=useState(null)
-    const [acceptOne,setAcceptOne]=useState(null)
-    const [acceptTwo,setAcceptTwo]=useState(null)
+    const [confirmPassword,setConfirmPassword]=useState('')
+    const [phoneNumber,setPhoneNumber]=useState('')
+    const [acceptOne,setAcceptOne]=useState('')
+    const [acceptTwo,setAcceptTwo]=useState('')
+    const [serverError,setServerErr]=useState('')
     const handleSubmit=(e)=>{
         e.preventDefault()
-        if (Validate(email,password).error){
-            console.log(Validate(email,password).emailErr)
-            console.log(Validate(email,password).passwordErr)
+        if (Validate(email,password,confirmPassword,acceptOne,acceptTwo).error){
+            console.log(Validate(email,password,confirmPassword,acceptOne,acceptTwo).emailErr)
+            console.log(Validate(email,password,confirmPassword,acceptOne,acceptTwo).passwordErr)
+            console.log(Validate(email,password,confirmPassword,acceptOne,acceptTwo).acceptErr)
         }else{
-            console.log('sent')
+            console.log(password,email,phoneNumber,firstName,lastName,country,birthday,acceptOne,acceptTwo)
+            AxiosRegister(password,email,phoneNumber,firstName,lastName,country,birthday,acceptOne,acceptTwo,confirmPassword,setServerErr)
         }
     }
 
@@ -42,7 +46,7 @@ const Register=({mobile})=>{
             <Select onChange={(e)=>setCountry(e.target.value)} className={mobile.matches ?'w-100 mx-auto':'w-50 mx-auto'}>
                 <CountryOptions />
             </Select>
-            <p className={mobile.matches ?'w-100 mx-auto mt-4':'w-50 mx-auto mt-4'}>Birthday</p>
+            <p className={mobile.matches ? 'w-100 mx-auto mt-4' : 'w-50 mx-auto mt-4'}>Birthday</p>
             <InputText onChange={(e)=>setBirthday(e.target.value)} type='date' className={mobile.matches ?'w-100 mx-auto':'w-50 mx-auto'}/>
             <InputText onChange={(e)=>setEmail(e.target.value)} type='text' className={mobile.matches ?'w-100 mx-auto mt-4':'w-50 mx-auto mt-4'} placeholder='name@example.com'/>
             <InputText onChange={(e)=>setPassword(e.target.value)} type='password' className={mobile.matches ?'w-100 mx-auto mt-4':'w-50 mx-auto mt-4'} placeholder='Password'/>
@@ -62,6 +66,7 @@ const Register=({mobile})=>{
                     <p style={{fontSize:'0.8rem'}}>Receive Apple emails and communications including new releases, exclusive content, special offers, and marketing and recommendations for apps, music, movies, TV, books, podcasts, Apple Pay, Apple Card and more.</p>
                 </div>
             </div>
+            <p className='text-danger text-center w-100' style={{fontSize:'0.8rem'}}>{serverError}</p>
             <RegisterBtn type='submit' className='mx-auto d-block'>Continue</RegisterBtn>
         </form>
         <Footer mobile={mobile} />
