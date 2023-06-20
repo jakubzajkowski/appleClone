@@ -29,6 +29,7 @@
     "redux": "^4.2.1",
     "sass": "^1.62.1",
     "styled-components": "^6.0.0-rc.2",
+    "validator": "^13.9.0",
     "vitest": "^0.31.1"
   },
   "devDependencies": {
