@@ -22,6 +22,7 @@ import ExploreAllIpad from './pages/IPad/ExploreAllIpad';
 import ExploreAllIphone from './pages/iPhone/ExploreAllIphone';
 import TVandHome from './pages/TV&Home/TV&Home';
 import Register from './pages/Register/Register';
+import SignUp from './pages/SignUp/SignUp'
 
 // const reducer = (state,action)=>{
 //     switch (action.type){
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="/iphone" element={<ExploreAllIphone mobile={mobile}/>} />
             <Route path="/tv-home" element={<TVandHome mobile={mobile}/>} />
             <Route path="/register" element={<Register mobile={mobile}/>} />
+            <Route path="/sign-up" element={<SignUp mobile={mobile}/>} />
         </Routes>
       </BrowserRouter>
     </MobileContext.Provider>
