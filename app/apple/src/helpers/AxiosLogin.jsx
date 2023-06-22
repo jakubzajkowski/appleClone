@@ -4,8 +4,14 @@ const AxiosLogin=(password,email)=>{
     axios.post('http://127.0.0.1:3000/login',{
         email: email,
         password : password,
-    }).then(({data})=>{
-        console.log(data.error)
+    }, {
+        headers: {
+            'Content-Type': 'application/json'
+          },
+          withCredentials: true,
+          credentials: 'include',
+      }).then((response)=>{
+        console.log(response)
     })
 }
 

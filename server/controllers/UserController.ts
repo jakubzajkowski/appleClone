@@ -16,7 +16,7 @@ interface User {
 }
 
 export const UserController=async (req:UserRequest,res:express.Response)=>{
-    const user = await prisma.user.findFirst({where: {id: req.userId}})
+    const user = await prisma.user.findFirst({where: {id: req.userId.id}})
     const User:User={
         first_name: user?.first_name,
         last_anme: user?.last_name,

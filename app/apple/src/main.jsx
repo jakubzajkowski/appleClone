@@ -24,44 +24,31 @@ import TVandHome from './pages/TV&Home/TV&Home';
 import Register from './pages/Register/Register';
 import SignUp from './pages/SignUp/SignUp'
 
-// const reducer = (state,action)=>{
-//     switch (action.type){
-//         case "increment":
-//           state = {number:state.number+1,names:[...state.names,action.payload]}
-//           break
-//         case "decrement":
-//           state = {number:state.number-1,names:[...state.names,action.payload]}
-//           break
-//     }
-//     return state
-// }
-// const store = createStore(reducer, {names:['wojtek','Alan'],number:1})
-
 export default function App() {
   const mobile=window.matchMedia("(max-width: 950px)")
   return (
     <MobileContext.Provider value={mobile}>
       <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home mobile={mobile}/>}></Route>
-            <Route path="/store" element={<Store mobile={mobile}/>}></Route>
-            <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
-            <Route path="/store/buy-iphone" element={<BuyiPhone mobile={mobile}/>}></Route>
-            <Route path="/store/buy-ipad" element={<BuyiPad mobile={mobile}/>}></Route>
-            <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac mobile={mobile}/>} />
-            <Route path="/store/buy-iphone/:name" element={<BuyCastomizeiPhone mobile={mobile}/>} />
-            <Route path="/store/buy-ipad/:name" element={<BuyCastomizeiPad mobile={mobile}/>} />
-            <Route path="/iphone-14-pro" element={<IPhone14Pro mobile={mobile}/>} />
-            <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro mobile={mobile} /></ParallaxProvider>} />
-            <Route path="/imac" element={<IMac mobile={mobile}/>} />
-            <Route path="/mac" element={<ExploreAllMac mobile={mobile}/>} />
-            <Route path="/ipad" element={<ExploreAllIpad mobile={mobile}/>} />
-            <Route path="/iphone" element={<ExploreAllIphone mobile={mobile}/>} />
-            <Route path="/tv-home" element={<TVandHome mobile={mobile}/>} />
-            <Route path="/register" element={<Register mobile={mobile}/>} />
-            <Route path="/sign-up" element={<SignUp mobile={mobile}/>} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Home mobile={mobile}/>}></Route>
+              <Route path="/store" element={<Store mobile={mobile}/>}></Route>
+              <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
+              <Route path="/store/buy-iphone" element={<BuyiPhone mobile={mobile}/>}></Route>
+              <Route path="/store/buy-ipad" element={<BuyiPad mobile={mobile}/>}></Route>
+              <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac mobile={mobile}/>} />
+              <Route path="/store/buy-iphone/:name" element={<BuyCastomizeiPhone mobile={mobile}/>} />
+              <Route path="/store/buy-ipad/:name" element={<BuyCastomizeiPad mobile={mobile}/>} />
+              <Route path="/iphone-14-pro" element={<IPhone14Pro mobile={mobile}/>} />
+              <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro mobile={mobile} /></ParallaxProvider>} />
+              <Route path="/imac" element={<IMac mobile={mobile}/>} />
+              <Route path="/mac" element={<ExploreAllMac mobile={mobile}/>} />
+              <Route path="/ipad" element={<ExploreAllIpad mobile={mobile}/>} />
+              <Route path="/iphone" element={<ExploreAllIphone mobile={mobile}/>} />
+              <Route path="/tv-home" element={<TVandHome mobile={mobile}/>} />
+              <Route path="/register" element={<Register mobile={mobile}/>} />
+              <Route path="/sign-up" element={<SignUp mobile={mobile}/>} />
+          </Routes>
+        </BrowserRouter>
     </MobileContext.Provider>
   );
 }

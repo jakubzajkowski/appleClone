@@ -14,7 +14,7 @@ export const LoginController=async (req:express.Request,res:express.Response)=>{
     if (user){
        const validPassword=await bcrypt.compare(password,user.password) 
        if (validPassword){
-            const accessToken =Jwt.sign(user, 'secret', {expiresIn: '30d'})
+            const accessToken =Jwt.sign(user, process.env.TOKEN_SECRET as string, {expiresIn: '30d'})
             const refreshToken =Jwt.sign(user, process.env.REFRESH_TOKEN_SECRET as string, {expiresIn: '30d'})
             const userToken : userToken ={
                 token: refreshToken
@@ -22,7 +22,7 @@ export const LoginController=async (req:express.Request,res:express.Response)=>{
             if (user.token='token'){
                 const updateUser = await prisma.user.update({where: {email: user.email},data: userToken,})
             }
-            res.cookie("access_token", accessToken, {httpOnly: true,secure: true,maxAge: 216000})
+            res.cookie("access_token", accessToken, {httpOnly: true,maxAge: 216000})
             res.json({msg:'logged'})
        }
        else{

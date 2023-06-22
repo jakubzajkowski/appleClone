@@ -13,7 +13,12 @@ const AxiosRegister=(password,email,phoneNumber,firstName,lastName,country,birth
         acceptOne: acceptOne,
         acceptTwo: acceptTwo
     }).then(({data})=>{
-        setServerErr(data.error)
+        if (data.error){
+            setServerErr(data.error)
+        }
+        else{
+            window.location.href='/'
+        }
     })
 }
 

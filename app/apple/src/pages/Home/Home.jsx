@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Bar from "./Bar";
 import Footer from '../../components/Footer';
 
+
 const Home=({mobile})=>{
     return <div style={{width:mobile.matches ? '100vw' : '99vw'}}>
         <Nav mobile={mobile}/>
