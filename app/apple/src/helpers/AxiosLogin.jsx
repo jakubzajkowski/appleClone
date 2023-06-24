@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const AxiosLogin=(password,email)=>{
+const AxiosLogin=(password,email,setErrorServer)=>{
     axios.post('http://127.0.0.1:3000/login',{
         email: email,
         password : password,
@@ -10,8 +10,13 @@ const AxiosLogin=(password,email)=>{
           },
           withCredentials: true,
           credentials: 'include',
-      }).then((response)=>{
-        console.log(response)
+      }).then(({data})=>{
+        if (data.error==''){
+            window.location.href='/account'
+        }
+        else{
+            setErrorServer(data.error)
+        }
     })
 }
 

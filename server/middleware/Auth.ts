@@ -16,7 +16,7 @@ const Auth=async (req:UserRequest,res:express.Response,next:express.NextFunction
         req.userId = verified;  
         next();
       } catch (err) {
-        res.send('Invalid token !');
+        res.json({error:'Invalid token'});
       }
 };
 

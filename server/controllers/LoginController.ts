@@ -22,8 +22,8 @@ export const LoginController=async (req:express.Request,res:express.Response)=>{
             if (user.token='token'){
                 const updateUser = await prisma.user.update({where: {email: user.email},data: userToken,})
             }
-            res.cookie("access_token", accessToken, {httpOnly: true,maxAge: 216000})
-            res.json({msg:'logged'})
+            res.cookie("access_token", accessToken, {httpOnly: true,maxAge: 2160000})
+            res.json({msg:'logged',error:''})
        }
        else{
             res.json({error:'this password is wrong'})

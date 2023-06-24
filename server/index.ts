@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true');
     next();
   });
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../public/dist")));
 app.use('/',router)
 app.use('/api',api)
 

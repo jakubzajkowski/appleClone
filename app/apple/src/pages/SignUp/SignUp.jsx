@@ -4,6 +4,7 @@ import Nav from '../../components/Nav'
 import styled from 'styled-components'
 import { useState } from 'react'
 import AxiosLogin from '../../helpers/AxiosLogin'
+import validator from 'validator'
 
 export const InputText=styled.input`
     border: 1px solid rgb(180,180,180);
@@ -21,8 +22,15 @@ export const InputText=styled.input`
 const SignUp=({mobile})=>{
     const [appleId,setAppleId]=useState('')
     const [password,setPassword]=useState('')
+    const [errorServer,setErrorServer]=useState('')
+    const [ErrClient,setErrClient]=useState('')
     const handleSubmit=()=>{
-        AxiosLogin(password,appleId)
+        if (validator.isEmpty(appleId) || validator.isEmpty(password)){
+            setErrClient('Fill all fields')
+        }else{
+            AxiosLogin(password,appleId,setErrorServer)
+            setErrClient('')
+        }
     }
 
     return (
@@ -39,6 +47,8 @@ const SignUp=({mobile})=>{
                     <InputText onChange={(e)=>setPassword(e.target.value)} type='password' className='w-100' placeholder='Password'/>
                     <svg onClick={handleSubmit} style={{width:'40px',height:'40px',fill:'rgb(180,180,180)',cursor:'pointer',padding:'0.3rem',position:'absolute',top:'0%',right:'0'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
                 </div>
+                <p className='text-center mt-5 text-danger' style={{fontSize:'0.8rem'}}>{ErrClient}</p>
+                <p className='text-center text-danger' style={{fontSize:'0.8rem'}}>{errorServer}</p>
             </div>
             <p className='text-center mt-5' style={{fontSize:'0.9rem'}}><a href="">Forgot Apple ID or password?</a></p>
             <p className='text-center' style={{fontSize:'0.9rem'}}>Don’t have an Apple ID? <a href="">Create yours now.</a></p>
