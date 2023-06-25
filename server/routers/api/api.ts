@@ -5,6 +5,7 @@ import { ApiiPhoneController,ApiiPhoneNameController } from '../../controllers/A
 import { ApiiPadController,ApiiPadNameController} from '../../controllers/ApiiPadController';
 import { UserController } from '../../controllers/UserController';
 import Auth  from '../../middleware/Auth';
+import RefreshToken from '../../middleware/RefreshToken';
 
 const api = express.Router();
 
@@ -15,6 +16,6 @@ api.get('/ipad/:name', ApiiPadNameController)
 api.get('/iphone', ApiiPhoneController)
 api.get('/iphone/:name', ApiiPhoneNameController)
 api.get('/ipad', ApiiPadController)
-api.get('/users', Auth,UserController)
+api.get('/users',RefreshToken, Auth,UserController)
 
 export default api

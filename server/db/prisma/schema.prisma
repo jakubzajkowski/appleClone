@@ -97,7 +97,7 @@ model User {
   phone_number String
   order Order[]
   createdAt  DateTime @default(now())
-  token String @default("token")
+  token String @db.VarChar(60000)
 }
 model Order {
     id Int @id @default(autoincrement())

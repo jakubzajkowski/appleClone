@@ -4,7 +4,7 @@ const initialState={
     user:{
       data:'',
       isLoading:true,
-      logged: '',
+      logged: false,
       cart: ''
     },
 }

@@ -4,7 +4,7 @@ import validator from "validator"
 import bcrypt from 'bcrypt'
 import Jwt  from "jsonwebtoken"
 
-interface userToken {
+interface userTokenType {
     token : string
 }
 
@@ -14,15 +14,14 @@ export const LoginController=async (req:express.Request,res:express.Response)=>{
     if (user){
        const validPassword=await bcrypt.compare(password,user.password) 
        if (validPassword){
-            const accessToken =Jwt.sign(user, process.env.TOKEN_SECRET as string, {expiresIn: '30d'})
+            const accessToken =Jwt.sign(user, process.env.TOKEN_SECRET as string, {expiresIn: '1d'})
             const refreshToken =Jwt.sign(user, process.env.REFRESH_TOKEN_SECRET as string, {expiresIn: '30d'})
-            const userToken : userToken ={
+            const userToken : userTokenType={
                 token: refreshToken
             }
-            if (user.token='token'){
-                const updateUser = await prisma.user.update({where: {email: user.email},data: userToken,})
-            }
-            res.cookie("access_token", accessToken, {httpOnly: true,maxAge: 2160000})
+            await prisma.user.update({ where: { email: email }, data: userToken})
+            res.cookie("access_token", accessToken, {httpOnly: true,maxAge: 60 * 1000 * 60 * 24})
+            res.cookie("refresh_token", refreshToken, {httpOnly: true,maxAge: 60 * 1000 * 60 * 24 * 31 })
             res.json({msg:'logged',error:''})
        }
        else{

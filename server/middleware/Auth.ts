@@ -10,8 +10,8 @@ const Auth=async (req:UserRequest,res:express.Response,next:express.NextFunction
     try {
         const token = req.cookies.access_token
         if (!token) {
-          throw new Error('Authentication failed!');
-        }
+              throw new Error('Authentication failed!');
+          }
         const verified = Jwt.verify(token, process.env.TOKEN_SECRET as string);
         req.userId = verified;  
         next();
