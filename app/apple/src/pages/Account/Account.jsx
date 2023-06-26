@@ -3,8 +3,10 @@ import  PropTypes  from 'prop-types'
 import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import {useSelector} from 'react-redux'
-import { useEffect } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
+import AccountPanel from './AccountPanel'
+import { accountList } from './accountList'
 
 export const SignOutBtn=styled.button`
 border:none;
@@ -18,9 +20,8 @@ const Account=({mobile})=>{
     const userData= useSelector(state=>state.user.data)
     const isLogged= useSelector(state=>state.user.logged)
     const isLoading= useSelector(state=>state.user.isLoading)
-    useEffect(()=>{
-        console.log(userData)
-    })
+    const [panel,setPanel] = useState('Sign In Security')
+
     if (isLogged) return (
         <div style={{width:mobile.matches ? '100vw' : '99vw',overflow:'hidden',backgroundColor:'rgb(245,245,245)'}}>
         <Nav mobile={mobile}/>
@@ -33,15 +34,17 @@ const Account=({mobile})=>{
                 <div className='w-25'>
                     <ul>
                         <h1>{userData?.first_name} {userData?.last_name}</h1>
-                        <li style={{listStyle:'none',margin:'0 0 4rem 0'}}>{userData?.email}</li>
-                        <li style={{listStyle:'none',margin:'0 0 1rem 0'}}>Sign In Security</li>
-                        <li style={{listStyle:'none',margin:'0 0 1rem 0'}}>Personal Information</li>
-                        <li style={{listStyle:'none',margin:'0 0 1rem 0'}}>Payment</li>
-                        <li style={{listStyle:'none',margin:'0 0 1rem 0'}}>Products</li>
+                        <li style={{listStyle:'none',margin:'0 0 4rem 0',cursor:'pointer'}}>{userData?.email}</li>
+                        <li style={{listStyle:'none',margin:'0 0 1rem 0',cursor:'pointer'}} onClick={()=>setPanel('Sign In Security')}>Sign In Security</li>
+                        <li style={{listStyle:'none',margin:'0 0 1rem 0',cursor:'pointer'}} onClick={()=>setPanel('Personal Information')}>Personal Information</li>
+                        <li style={{listStyle:'none',margin:'0 0 1rem 0',cursor:'pointer'}} onClick={()=>setPanel('Payment')}>Payment</li>
+                        <li style={{listStyle:'none',margin:'0 0 1rem 0',cursor:'pointer'}} onClick={()=>setPanel('Products')}>Products</li>
                     </ul>
                 </div>
-                <div className='w-75'>
-                    
+                <div className='w-75 p-2'>
+                    {
+                        accountList.filter(x=>x.type===panel).map(info=><AccountPanel key={info.type} mobile={mobile} data={info}/>)
+                    }
                 </div>
             </div>
         <Footer mobile={mobile} />

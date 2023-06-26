@@ -27,12 +27,12 @@ import SignUp from './pages/SignUp/SignUp'
 import { Provider } from 'react-redux';
 import store from './Redux/Store';
 import {FetchUser} from './Redux/Actions'
-import useFetchApi from './hooks/useFetchApi';
+import useAuth from './hooks/useAuth';
 import Account from './pages/Account/Account'
 
 export default function App() {
   const mobile=window.matchMedia("(max-width: 950px)")
-  const {data,error,isLoading}=useFetchApi('/api/users')
+  const {data,error,isLoading}=useAuth()
   useEffect(()=>{
     store.dispatch(FetchUser(data,isLoading))
   },[data])
