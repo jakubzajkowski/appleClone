@@ -10,7 +10,8 @@ interface userDataType {
     birthday :string,
     email: string,
     password : string,
-    phone_number : string
+    phone_number : string,
+    token : string
   }
 
 export const RegisterController=async (req:express.Request,res:express.Response)=>{
@@ -35,7 +36,8 @@ export const RegisterController=async (req:express.Request,res:express.Response)
                 birthday : birthday,
                 email: email,
                 password : hash,
-                phone_number : phoneNumber
+                phone_number : phoneNumber,
+                token: ''
             } 
             const createUser = await prisma.user.create({ data: userData})
             res.json({error:'',msg: 'Added'})

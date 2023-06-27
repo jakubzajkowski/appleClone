@@ -1,7 +1,5 @@
 import prisma from "../db/Prisma"
 import express from "express"
-import validator from "validator"
-import bcrypt from 'bcrypt'
 
 interface UserRequest extends express.Request {
     userId: any

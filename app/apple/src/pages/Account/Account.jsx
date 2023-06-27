@@ -1,4 +1,4 @@
-
+import AxiosLogOut from '../../helpers/AxiosLogOut'
 import  PropTypes  from 'prop-types'
 import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
@@ -27,7 +27,7 @@ const Account=({mobile})=>{
         <Nav mobile={mobile}/>
         <div className={mobile.matches ? 'w-100 my-4 mx-auto d-flex p-2 justify-content-between align-items-center' : 'w-75 my-4 mx-auto d-flex p-2 justify-content-between align-items-center'}>
             <h3>Apple ID</h3>
-            <SignOutBtn>Sign Out</SignOutBtn>
+            <SignOutBtn onClick={()=>AxiosLogOut()}>Sign Out</SignOutBtn>
         </div>
         <hr className='w-75 mx-auto'/>
         <div className={mobile.matches ? 'w-100 my-4 mx-auto d-lg-flex p-2 justify-content-between align-items-center' : 'w-75 my-4 mx-auto d-lg-flex p-2 justify-content-between align-items-center'}>
