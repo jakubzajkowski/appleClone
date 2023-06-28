@@ -10,7 +10,6 @@ const RefreshToken=async (req:express.Request,res:express.Response,next:express.
               next()
           }
         else{
-            console.log('token_not')
             const user = await prisma.user.findFirst({where: {token: refresh_token}})
             if (user){
                 const verified = Jwt.verify(refresh_token, process.env.REFRESH_TOKEN_SECRET as string);

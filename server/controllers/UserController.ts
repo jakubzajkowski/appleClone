@@ -5,6 +5,7 @@ interface UserRequest extends express.Request {
     userId: any
 }
 interface User {
+    id : string | undefined,
     first_name: string | undefined,
     last_name: string | undefined,
     country: string | undefined,
@@ -16,6 +17,7 @@ interface User {
 export const UserController=async (req:UserRequest,res:express.Response)=>{
     const user = await prisma.user.findFirst({where: {id: req.userId.id}})
     const User:User={
+        id : user?.id,
         first_name: user?.first_name,
         last_name: user?.last_name,
         country: user?.country,
