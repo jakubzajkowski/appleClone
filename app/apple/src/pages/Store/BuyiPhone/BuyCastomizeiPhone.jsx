@@ -15,6 +15,8 @@ import Display from './Display';
 import Storage from './Storage';
 import Price from './Price';
 import { iPhonePriceContex } from './iPhonePriceContex';
+import { useSelector } from 'react-redux';
+import AxiosAddToBag from '../../../helpers/AxiosAddToBag';
 
 const Castomize=styled.div`
     width: 100%;
@@ -25,6 +27,13 @@ const Castomize=styled.div`
         width: 100%;
         padding:1rem;
     }
+`
+const CartButton=styled.button`
+border:none;
+padding: 0.5rem 1rem;
+background-color: rgb(30,144,255);
+color:white;
+border-radius: 3rem;
 `
 const ColorDots=styled.div`
         border-radius: 3rem;
@@ -45,6 +54,8 @@ const ColorDots=styled.div`
 `
 
 const BuyCastomizeiPhone=({mobile})=>{
+    const userData= useSelector(state=>state.user.data)
+    const isLogged= useSelector(state=>state.user.logged)
     const { name } = useParams();
     const {data,error,isLoading}=useFetchApi(`/api/iphone/${name}`)
     const arrColors = data?.colors.split(',')
@@ -84,6 +95,7 @@ const BuyCastomizeiPhone=({mobile})=>{
                     <div className={mobile.matches ? 'w-100 sticky-top' : 'w-100 sticky-top p-5'}>
                         <h1 className={mobile.matches ? 'w-100 ' : 'w-100'} style={{fontSize:'3rem'}}>{data?.device_name}</h1>
                         <p>{<Price price={data?.price_number}/>}</p>
+                        <CartButton className='mb-5' onClick={()=>AxiosAddToBag(userData?.id,'iphone',data.id,data?.price_number+storageModify.price+displayModify.price)}>Add to Bag</CartButton>
                         <div className='position-relative overflow-hidden'>
                             {[data?.img_0,data?.img_1,data?.img_2].filter((img,i)=>i === slideIndex).map(img=><motion.img variants={variants} initial={{opacity:0}} animate={(direction==-1) ? 'right' : 'left'} transition={{type:'spring',ease:'easeInOut',duration:'0.8'}} exit={{opacity:0}} className='w-100' key={slide} src={img} alt='img'/>)}
                             <motion.svg onClick={()=>paginate(1)} initial={{fill:'rgb(120,120,120)'}} whileHover={{scale:'1.05',fill:'black',}} style={{fill:'rgb(120,120,120)',width:'50px',height:'50px',top:'40%',position:'absolute',right:0,cursor:'pointer'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></motion.svg>
@@ -118,7 +130,6 @@ const BuyCastomizeiPhone=({mobile})=>{
             </Row>
         </Castomize>)}
         </iPhonePriceContex.Provider>
-        <div></div>
         <Footer mobile={mobile}/>
     </div>
 }

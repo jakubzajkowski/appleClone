@@ -28,3 +28,17 @@ export const FetchUser=(data,isLoading)=>{
         }
     }
 }
+export const FetchCart=(cart)=>{
+    if (cart){
+        return {
+            type:'FETCH_CART',
+            payload:cart
+        }
+    }
+    else{
+        return {
+            type:'FETCH_CART',
+            payload:null
+        }
+    }
+}

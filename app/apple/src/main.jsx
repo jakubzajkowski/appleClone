@@ -27,14 +27,19 @@ import SignUp from './pages/SignUp/SignUp'
 import { Provider } from 'react-redux';
 import store from './Redux/Store';
 import {FetchUser} from './Redux/Actions'
+import { FetchCart } from './Redux/Actions';
 import useAuth from './hooks/useAuth';
+import useCart from './hooks/useCart';
 import Account from './pages/Account/Account'
 
 export default function App() {
   const mobile=window.matchMedia("(max-width: 950px)")
   const {data,error,isLoading}=useAuth()
+  const {cart,Carterror,isCartLoading}=useCart()
   useEffect(()=>{
     store.dispatch(FetchUser(data,isLoading))
+    store.dispatch(FetchCart(cart))
+    console.log(store.getState())
   },[data])
   return (
     <MobileContext.Provider value={mobile}>

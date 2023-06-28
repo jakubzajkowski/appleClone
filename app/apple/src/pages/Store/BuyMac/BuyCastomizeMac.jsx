@@ -108,7 +108,7 @@ const BuyCastomizeMac=({mobile})=>{
                 </Col>
             </Row>
         </Castomize>)}
-        <PriceBanner price_number={data?.price_number} mobile={mobile}/>
+        <PriceBanner price_number={data?.price_number} mobile={mobile} id={data?.id}/>
         </MacPriceContext.Provider>
         <Footer mobile={mobile}/>
     </div>
