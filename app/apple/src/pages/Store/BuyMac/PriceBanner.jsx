@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { useContext } from 'react'
 import { MacPriceContext } from './MacPriceContext'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import AxiosAddToBag from '../../../helpers/AxiosAddToBag';
+import {AddCart} from '../../../Redux/Actions'
 
 const Banner=styled.div`
     position: fixed;
@@ -45,10 +46,17 @@ const BagButton=styled.button`
     border-radius: 0.5rem;
 `
 
-const PriceBanner=({price_number,mobile,id})=>{
+const PriceBanner=({price_number,mobile,id,data})=>{
     const userData= useSelector(state=>state.user.data)
     const isLogged= useSelector(state=>state.user.logged)
     const {memoryModify,storageModify} = useContext(MacPriceContext)
+    const dispatch=useDispatch()
+
+    const handelAddToCart=()=>{
+        dispatch(AddCart(data))
+        AxiosAddToBag(userData?.id,'mac',id,storageModify.price+memoryModify.price+price_number)
+    }
+
     return <Banner>
         <BannerContent>{mobile.matches ? '' : (
             <Delivery>
@@ -60,7 +68,7 @@ const PriceBanner=({price_number,mobile,id})=>{
             <Price>
                 <h5 className='text-sm-left'>${price_number+storageModify.price+memoryModify.price} or ${Math.round(((price_number+storageModify.price+memoryModify.price)/12) * 100) / 100}/mo.per month for 12 mo.monthsFootnote*</h5>
                 <a href="" className='mx-3'>Get 3% Daily Cash with Apple Card</a>
-                <BagButton onClick={()=>AxiosAddToBag(userData?.id,'mac',id,storageModify.price+memoryModify.price+price_number)}>Add to Bag</BagButton>
+                <BagButton onClick={()=>handelAddToCart()}>Add to Bag</BagButton>
                 <svg style={{width:'30px',height:'30px',margin: '0 1rem'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M0 48C0 21.5 21.5 0 48 0l0 48V441.4l130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4V48H48V0H336c26.5 0 48 21.5 48 48V488c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/></svg>
             </Price>
         </BannerContent>
@@ -70,7 +78,8 @@ const PriceBanner=({price_number,mobile,id})=>{
 PriceBanner.propTypes={
     mobile: PropTypes.object,
     price_number: PropTypes.number,
-    id : PropTypes.string
+    id : PropTypes.string,
+    data: PropTypes.object
 }
 
 export default PriceBanner

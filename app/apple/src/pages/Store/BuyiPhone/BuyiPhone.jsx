@@ -12,6 +12,7 @@ import { ShopSavesLists } from '../shopSavesLists';
 import { ShopSupportsLists } from '../ShopSupportLists';
 
 
+
 const BuyiPhone=({mobile})=>{
     const {data,error,isLoading}=useFetchApi('/api/iphone')
     const BuyMacContainer=styled.div`

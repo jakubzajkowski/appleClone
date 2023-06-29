@@ -42,3 +42,17 @@ export const FetchCart=(cart)=>{
         }
     }
 }
+export const DeleteCart=(cart)=>{
+        return {
+            type:'DELETE_CART',
+            payload:cart
+        }
+    
+}
+export const AddCart=(cart)=>{
+    return {
+        type:'ADD_CART',
+        payload:cart
+    }
+
+}

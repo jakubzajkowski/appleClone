@@ -15,8 +15,9 @@ import Display from './Display';
 import Storage from './Storage';
 import Price from './Price';
 import { iPadPriceContex } from './iPadPricecontext';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import AxiosAddToBag from '../../../helpers/AxiosAddToBag';
+import {AddCart} from '../../../Redux/Actions'
 
 const Castomize=styled.div`
     width: 100%;
@@ -64,6 +65,7 @@ const BuyCastomizeiPad=({mobile})=>{
     const [pickColor,setPickColor]=useState(null)
     const [[slide,direction],setSlide]=useState([0,0])
     const slideIndex=wrap(0,[data?.img_0,data?.img_1,data?.img_2].length,slide)
+    const dispatch = useDispatch()
 
     const paginate=(newDir)=>{
         setSlide([slide+newDir,newDir])
@@ -78,6 +80,10 @@ const BuyCastomizeiPad=({mobile})=>{
             opacity:1,
             x:['-100%','0%']
         }
+    }
+    const handelAddToCart=()=>{
+        dispatch(AddCart(data))
+        AxiosAddToBag('ff6ec10e-512a-45ea-8d73-f95da514f74c','ipad',data.id,data?.price_number+storageModify.price+displayModify.price)
     }
 
 
@@ -95,7 +101,7 @@ const BuyCastomizeiPad=({mobile})=>{
                     <div className={mobile.matches ? 'w-100 sticky-top' : 'w-100 sticky-top p-5'}>
                         <h1 className={mobile.matches ? 'w-100 ' : 'w-100'} style={{fontSize:'3rem'}}>{data?.device_name}</h1>
                         <p>{<Price price={data?.price_number}/>}</p>
-                        <CartButton  className='mb-5' onClick={()=>AxiosAddToBag(userData?.id,'ipad',data.id,data?.price_number+storageModify.price+displayModify.price)}>Add to Bag</CartButton>
+                        <CartButton  className='mb-5' onClick={()=>handelAddToCart()}>Add to Bag</CartButton>
                         <div className='position-relative overflow-hidden'>
                             {[data?.img_0,data?.img_1,data?.img_2].filter((img,i)=>i === slideIndex).map(img=><motion.img variants={variants} initial={{opacity:0}} animate={(direction==-1) ? 'right' : 'left'} transition={{type:'spring',ease:'easeInOut',duration:'0.8'}} exit={{opacity:0}} className='w-100' key={slide} src={img} alt='img'/>)}
                             <motion.svg onClick={()=>paginate(1)} initial={{fill:'rgb(120,120,120)'}} whileHover={{scale:'1.05',fill:'black',}} style={{fill:'rgb(120,120,120)',width:'50px',height:'50px',top:'40%',position:'absolute',right:0,cursor:'pointer'}} xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></motion.svg>

@@ -40,7 +40,7 @@ function Bag() {
             <BagStyled className="bg-dark">
                 <BagMenu>
                     <BagOptions>
-                        {(cart.length!=0) ? <ProductContainer/> : <h1 style={{color:'white'}} className='mx-2 mb-4'>Your Bag is empty.</h1>}
+                        {(cart.length!=0) ? <a href='/bag' style={{textDecoration:'none'}}><ProductContainer/></a> : <h1 style={{color:'white'}} className='mx-2 mb-4'>Your Bag is empty.</h1>}
                         <h3 style={{color:'grey',fontSize:'1rem'}} className='mx-2'>My Profile</h3>
                         <BagOption><svg style={{width:'20px',fill:'rgb(227, 227, 227)',cursor:'pointer'}} className='p-1 mb-1 mx-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M50.7 58.5L0 160H208V32H93.7C75.5 32 58.9 42.3 50.7 58.5zM240 160H448L397.3 58.5C389.1 42.3 372.5 32 354.3 32H240V160zm208 32H0V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192z"/></svg>Orders</BagOption>
                         <BagOption><svg style={{width:'20px',fill:'rgb(227, 227, 227)',cursor:'pointer'}} className='p-1 mb-1 mx-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 48C0 21.5 21.5 0 48 0l0 48V441.4l130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4V48H48V0H336c26.5 0 48 21.5 48 48V488c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/></svg>Your Saves</BagOption>
