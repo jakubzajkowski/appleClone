@@ -24,7 +24,7 @@ function ProductContainer() {
                     <div style={{width:'10%'}}>
                         <h3 className='mx-4 w-100'>${Math.floor(product.finalPrice)}.00</h3>
                         <p className='mx-4 w-100'>${Math.floor((product.finalPrice/12))}/mo.</p>
-                        <p className='text-primary mx-4 w-100' onClick={()=>handelDeleteCart(product)}>Remove</p>
+                        <p className='text-primary mx-4 w-100' style={{cursor:'pointer'}} onClick={()=>handelDeleteCart(product)}>Remove</p>
                     </div>
                 </div>
                 <hr />
