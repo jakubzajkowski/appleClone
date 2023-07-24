@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initialState={
     user:{
-      data:'',
+      data:null,
       isLoading:true,
       logged: false,
       cart: []

@@ -61,7 +61,7 @@ const Bag=({mobile})=>{
             <div className={mobile.matches ? 'w-75 my-3 mx-auto rounded p-5 text-center'  : 'w-50 my-3 mx-auto rounded p-5 text-center'} style={{backgroundColor:'rgb(245,245,245)'}}>
                 <h3>Pay in Full</h3>
                 <h3>${Math.floor(finalPrice())}.00</h3>
-                <CheckOutBtn className='w-75 mx-auto' onClick={()=>AxiosCheckOut(cart ? cart : '')}>Check Out</CheckOutBtn>
+                <CheckOutBtn className='w-75 mx-auto' onClick={()=>AxiosCheckOut(cart ? cart : null)}>Check Out</CheckOutBtn>
             </div>
         </div>
         <Footer mobile={mobile} />

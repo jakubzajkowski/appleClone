@@ -8,7 +8,7 @@ import { UserCartDeleteController } from '../controllers/UserCartDeleteControlle
 import { CheckOutController } from '../controllers/CheckOutController';
 
 const router = express.Router();
-const routes : string[] = ['/store','/store/*','/iphone-14-pro','/ipad-pro','/imac','/mac','/ipad','/iphone','/tv-home','/register','/sign-up','/account']
+const routes : string[] = ['/store','/store/*','/iphone-14-pro','/ipad-pro','/imac','/mac','/ipad','/iphone','/tv-home','/register','/sign-up','/account','/bag']
 router.post('/register', RegisterController)
 router.post('/login', LoginController)
 router.post('/logout', LogOutController)

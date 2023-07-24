@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const AxiosLogin=(password,email,setErrorServer)=>{
-    axios.post('http://127.0.0.1:3000/login',{
+    axios.post(`${import.meta.env.VITE_HOST_NAME}/login`,{
         email: email,
         password : password,
     }, {

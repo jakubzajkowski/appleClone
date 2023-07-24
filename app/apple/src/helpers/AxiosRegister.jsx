@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const AxiosRegister=(password,email,phoneNumber,firstName,lastName,country,birthday,acceptOne,acceptTwo,confirmPassword,setServerErr)=>{
-    axios.post('http://127.0.0.1:3000/register',{
+    axios.post(`${import.meta.env.VITE_HOST_NAME}/register`,{
         firstName :firstName,
         lastName : lastName,
         country : country,

@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const ApiNewsController_1 = require("../../controllers/ApiNewsController");
+const ApiMacController_1 = require("../../controllers/ApiMacController");
+const ApiiPhoneController_1 = require("../../controllers/ApiiPhoneController");
+const ApiiPadController_1 = require("../../controllers/ApiiPadController");
+const UserController_1 = require("../../controllers/UserController");
+const Auth_1 = __importDefault(require("../../middleware/Auth"));
+const RefreshToken_1 = __importDefault(require("../../middleware/RefreshToken"));
+const UserCartController_1 = require("../../controllers/UserCartController");
+const api = express_1.default.Router();
+api.get('/news', ApiNewsController_1.ApiNewsController);
+api.get('/mac', ApiMacController_1.ApiMacController);
+api.get('/mac/:name', ApiMacController_1.ApiMacNameController);
+api.get('/ipad/:name', ApiiPadController_1.ApiiPadNameController);
+api.get('/iphone', ApiiPhoneController_1.ApiiPhoneController);
+api.get('/iphone/:name', ApiiPhoneController_1.ApiiPhoneNameController);
+api.get('/ipad', ApiiPadController_1.ApiiPadController);
+api.get('/users', RefreshToken_1.default, Auth_1.default, UserController_1.UserController);
+api.get('/cart/:id', UserCartController_1.UserCartController);
+exports.default = api;

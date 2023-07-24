@@ -53,8 +53,13 @@ const PriceBanner=({price_number,mobile,id,data})=>{
     const dispatch=useDispatch()
 
     const handelAddToCart=()=>{
-        dispatch(AddCart(data))
-        AxiosAddToBag(userData?.id,'mac',id,storageModify.price+memoryModify.price+price_number)
+        if (isLogged){
+            dispatch(AddCart(data))
+            AxiosAddToBag(userData?.id,'mac',id,storageModify.price+memoryModify.price+price_number)
+        }
+        else{
+            window.location.href='/sign-up'
+        }
     }
 
     return <Banner>

@@ -82,8 +82,14 @@ const BuyCastomizeiPad=({mobile})=>{
         }
     }
     const handelAddToCart=()=>{
-        dispatch(AddCart(data))
-        AxiosAddToBag('ff6ec10e-512a-45ea-8d73-f95da514f74c','ipad',data.id,data?.price_number+storageModify.price+displayModify.price)
+        //'ff6ec10e-512a-45ea-8d73-f95da514f74c',
+        if (isLogged){
+            dispatch(AddCart(data))
+            AxiosAddToBag(userData?.id,'ipad',data.id,data?.price_number+storageModify.price+displayModify.price)
+        }
+        else{
+            window.location.href='/sign-up'
+        }
     }
 
 

@@ -82,8 +82,13 @@ const BuyCastomizeiPhone=({mobile})=>{
         }
     }
     const handelAddToCart=()=>{
-        dispatch(AddCart(data))
-        AxiosAddToBag(userData?.id,'iphone',data.id,data?.price_number+storageModify.price+displayModify.price)
+        if (isLogged){
+            dispatch(AddCart(data))
+            AxiosAddToBag(userData?.id,'iphone',data.id,data?.price_number+storageModify.price+displayModify.price)
+        }
+        else{
+            window.location.href='/sign-up'
+        }
     }
 
 

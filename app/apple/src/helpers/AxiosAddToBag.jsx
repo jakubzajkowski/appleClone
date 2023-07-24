@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const AxiosAddToBag=(userId,product_category,productId,price)=>{
-    axios.post('http://127.0.0.1:3000/add-cart',{
+    axios.post(`${import.meta.env.VITE_HOST_NAME}/add-cart`,{
         userId:userId,
         product_category: product_category,
         productId:productId,

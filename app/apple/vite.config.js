@@ -15,4 +15,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
   },
+  build: {
+    outDir: '../../server/public/dist'
+  }
 })
