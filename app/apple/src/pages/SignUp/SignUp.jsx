@@ -51,7 +51,7 @@ const SignUp=({mobile})=>{
                 <p className='text-center text-danger' style={{fontSize:'0.8rem'}}>{errorServer}</p>
             </div>
             <p className='text-center mt-5' style={{fontSize:'0.9rem'}}><a href="">Forgot Apple ID or password?</a></p>
-            <p className='text-center' style={{fontSize:'0.9rem'}}>Don’t have an Apple ID? <a href="">Create yours now.</a></p>
+            <p className='text-center' style={{fontSize:'0.9rem'}}>Don’t have an Apple ID? <a href="/register">Create yours now.</a></p>
         </form>
         <Footer mobile={mobile} />
         </div>
