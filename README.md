@@ -24,7 +24,7 @@ The Apple Website Clone is a full-stack web application built with TypeScript, E
 ### Payment Processing:
 - Stripe: A secure and reliable payment processing platform.
 ### Deployment:
-- AWS: A cloud platform for hosting and deploying web applications.
+- Render: A cloud platform for hosting and deploying web applications.
 ## Installation
 To access the Apple Website Clone, simply visit our website at https://apple-epvi.onrender.com/ using any modern web browser. No additional installation or downloads are required.
 ## License
