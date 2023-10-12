@@ -8,9 +8,11 @@ import StoreNewsCarousel from './StoreNewsCarousel';
 import StoreInfoCarousel from './StoreInfoCarousel';
 import ShoppingContentCarousel from './Usable/ShoppingContentCarousel';
 import { HelpList } from './HelpLists';
+import {useContext} from "react";
+import {MobileContext} from "../../context.jsx";
 
-const Store=({mobile})=>{
-
+const Store=()=>{
+    const mobile = useContext(MobileContext)
     const StoreContainer=styled.div`
         margin: 3rem 0 0 0;
         width:100%;

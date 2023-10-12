@@ -5,9 +5,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Bar from "./Bar";
 import Footer from '../../components/Footer';
+import {useContext} from "react";
+import {MobileContext} from "../../context.jsx";
 
 
-const Home=({mobile})=>{
+const Home=()=>{
+    const mobile = useContext(MobileContext)
     return <div style={{width:mobile.matches ? '100vw' : '99vw'}}>
         <Nav mobile={mobile}/>
         <div className="w-100 position-relative iphone-14-pro__section" style={{backgroundColor:'black'}}>

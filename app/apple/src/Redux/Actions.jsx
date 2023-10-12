@@ -14,20 +14,6 @@ export const FetchUser=(data,isLoading)=>{
         }
     }
 }
-// export const FetchUser=(data,isLoading)=>{
-//     if (data?.user){
-//         return {
-//             type:'FETCH_USER',
-//             payload:[testData,true,false]
-//         }
-//     }
-//     else{
-//         return {
-//             type:'FETCH_USER',
-//             payload:[testData,true,false]
-//         }
-//     }
-// }
 export const FetchCart=(cart)=>{
     if (cart){
         return {

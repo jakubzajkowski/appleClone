@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import Memory from './Memory';
 import Storage from './Storage';
-import { useState,useEffect } from 'react';
+import {useState, useEffect, useContext} from 'react';
 import PropTypes from 'prop-types';
 import Nav from '../../../components/Nav';
 import Footer from '../../../components/Footer';
@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 import PriceBanner from './PriceBanner';
 import { MacPriceContext } from './MacPriceContext';
 import GalleryModal from './GalleryModal';
+import {MobileContext} from "../../../context.jsx";
 
 const Castomize=styled.div`
     width: 50%;
@@ -34,7 +35,8 @@ const ColorDots=styled.div`
         cursor: pointer;
     `
 
-const BuyCastomizeMac=({mobile})=>{
+const BuyCastomizeMac=()=>{
+    const mobile = useContext(MobileContext)
     const { name } = useParams();
     const {data,error,isLoading}=useFetchApi(`/api/mac/${name}`)
     const arrColors = data?.colors.split(',')

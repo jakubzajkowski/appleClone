@@ -2,11 +2,12 @@ import PropTypes from 'prop-types'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import styled from 'styled-components'
-import { useState, useRef, useEffect} from 'react'
+import {useState, useRef, useEffect, useContext} from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Panels from './Panels'
 import ColorBar from './ColorBar'
 import IPhonePanel from '../iPhone/Usable/IPhonePanels'
+import {MobileContext} from "../../context.jsx";
 
 const ColorDots=styled.div`
         border-radius: 3rem;
@@ -26,7 +27,8 @@ const BuyButton=styled.button`
 const colors = ['gold','purple','white']
 const iphone = [{color: 'white',img:'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSpGgoQASTj44e6eup90qJF1RhHSQwcA84M30aVFlyCQ2Ia1eI_'},{color: 'purple',img:'https://ocdn.eu/pulscms-transforms/1/ycPk9kpTURBXy82MDEyNWZiYmQzNzk5ZDAzOGI1Mjc5YWM4YmU0MmQ1Ny5qcGeSlQMAAM0PAM0IcJMFzQOOzQJf3gABoTAF'},{color: 'gold',img:'https://thinkapple.pl/wp-content/uploads/2022/10/iphone-15-2023-concept-main.jpg'}]
 
-const IPhone14Pro=({mobile})=>{
+const IPhone14Pro=()=>{
+    const mobile = useContext(MobileContext)
     const [iphoneStart,setIPhoneStart]=useState('gold')
     const [barScrollTop,setBarScrollTop]=useState(null)
     const [isColorBar,setIsColorBar]=useState(true)

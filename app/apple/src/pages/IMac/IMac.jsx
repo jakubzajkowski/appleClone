@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
-import { useRef, useState } from 'react'
+import {useContext, useRef, useState} from 'react'
 import IMacColorSelectBar from './IMacColorSelectBar'
 import IMacParallax from './IMacParallax'
 import MacPanel from '../Mac/Usable/MacPanels'
+import {MobileContext} from "../../context.jsx";
 
 
-const IMac=({mobile})=>{
+const IMac=()=>{
+    const mobile = useContext(MobileContext)
     const [isPausedVid0,setIsPausedVid0]=useState(true)
     const [isPausedVid1,setIsPausedVid1]=useState(true)
     const videoRef0=useRef()

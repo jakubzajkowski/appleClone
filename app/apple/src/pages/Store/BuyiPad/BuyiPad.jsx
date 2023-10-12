@@ -10,9 +10,12 @@ import ShoppingContentCarousel from '../Usable/ShoppingContentCarousel';
 import { ShopGuidesLists } from '../ShopGuidesLists';
 import { ShopSavesLists } from '../shopSavesLists';
 import { ShopSupportsLists } from '../ShopSupportLists';
+import {useContext} from "react";
+import {MobileContext} from "../../../context.jsx";
 
 
-const BuyiPad=({mobile})=>{
+const BuyiPad=()=>{
+    const mobile = useContext(MobileContext)
     const {data,error,isLoading}=useFetchApi('/api/ipad')
     const BuyMacContainer=styled.div`
         margin: 3rem 0 0 0;

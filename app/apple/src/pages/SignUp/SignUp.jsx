@@ -2,9 +2,10 @@ import  PropTypes  from 'prop-types'
 import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import styled from 'styled-components'
-import { useState } from 'react'
+import {useContext, useState} from 'react'
 import AxiosLogin from '../../helpers/AxiosLogin'
 import validator from 'validator'
+import {MobileContext} from "../../context.jsx";
 
 export const InputText=styled.input`
     border: 1px solid rgb(180,180,180);
@@ -19,7 +20,8 @@ export const InputText=styled.input`
     
 `
 
-const SignUp=({mobile})=>{
+const SignUp=()=>{
+    const mobile = useContext(MobileContext)
     const [appleId,setAppleId]=useState('')
     const [password,setPassword]=useState('')
     const [errorServer,setErrorServer]=useState('')

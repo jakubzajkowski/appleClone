@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState,useEffect } from 'react';
+import {useState, useEffect, useContext} from 'react';
 import PropTypes from 'prop-types';
 import Nav from '../../../components/Nav';
 import Footer from '../../../components/Footer';
@@ -18,6 +18,7 @@ import { iPhonePriceContex } from './iPhonePriceContex';
 import { useSelector,useDispatch} from 'react-redux';
 import AxiosAddToBag from '../../../helpers/AxiosAddToBag';
 import {AddCart} from '../../../Redux/Actions'
+import {MobileContext} from "../../../context.jsx";
 
 const Castomize=styled.div`
     width: 100%;
@@ -54,7 +55,8 @@ const ColorDots=styled.div`
     cursor: pointer;
 `
 
-const BuyCastomizeiPhone=({mobile})=>{
+const BuyCastomizeiPhone=()=>{
+    const mobile = useContext(MobileContext)
     const userData= useSelector(state=>state.user.data)
     const isLogged= useSelector(state=>state.user.logged)
     const { name } = useParams();

@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
-import { useRef,useEffect} from 'react'
+import {useRef, useEffect, useContext} from 'react'
 import { motion,useInView,useAnimation } from 'framer-motion'
 import iPadBorder from '../../img/pngegg.png'
 import IPadProParallax from './iPadProParallaxiPad'
 import IPadPanel from '../IPad/Usable/IPadPanels'
+import {MobileContext} from "../../context.jsx";
 
-const IPadPro=({mobile})=>{
+const IPadPro=()=>{
+    const mobile = useContext(MobileContext)
     const textRef= useRef()
     const chipRef= useRef()
     const isInViewText=useInView(textRef,{once:true})

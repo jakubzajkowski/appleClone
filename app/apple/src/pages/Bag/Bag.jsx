@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux'
 import styled from 'styled-components'
 import ProductContainer from './ProductContainer'
 import AxiosCheckOut from '../../helpers/AxiosCheckOut'
+import {useContext} from "react";
+import {MobileContext} from "../../context.jsx";
 
 export const CheckOutBtn=styled.button`
 border:none;
@@ -14,7 +16,8 @@ color:white;
 border-radius: 1rem;
 `
 
-const Bag=({mobile})=>{
+const Bag=()=>{
+    const mobile = useContext(MobileContext)
     const userData= useSelector(state=>state.user.data)
     const isLogged= useSelector(state=>state.user.logged)
     const isLoading= useSelector(state=>state.user.isLoading)

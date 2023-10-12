@@ -35,37 +35,37 @@ import Bag from './pages/Bag/Bag';
 
 export default function App() {
   const mobile=window.matchMedia("(max-width: 950px)")
-  const {data,error,isLoading}=useAuth()
-  const {cart,Carterror,isCartLoading}=useCart()
+  const {data,isLoading}=useAuth()
+  const {cart}=useCart()
   useEffect(()=>{
       store.dispatch(FetchUser(data,isLoading))
       store.dispatch(FetchCart(cart))
-      console.log(store.getState())
   },[data,cart])
+
   return (
     <MobileContext.Provider value={mobile}>
       <Provider store={store}>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home mobile={mobile}/>}></Route>
-                <Route path="/store" element={<Store mobile={mobile}/>}></Route>
-                <Route path="/store/buy-mac" element={<BuyMac mobile={mobile}/>}></Route>
-                <Route path="/store/buy-iphone" element={<BuyiPhone mobile={mobile}/>}></Route>
-                <Route path="/store/buy-ipad" element={<BuyiPad mobile={mobile}/>}></Route>
-                <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac mobile={mobile}/>} />
-                <Route path="/store/buy-iphone/:name" element={<BuyCastomizeiPhone mobile={mobile}/>} />
-                <Route path="/store/buy-ipad/:name" element={<BuyCastomizeiPad mobile={mobile}/>} />
-                <Route path="/iphone-14-pro" element={<IPhone14Pro mobile={mobile}/>} />
-                <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro mobile={mobile} /></ParallaxProvider>} />
-                <Route path="/imac" element={<IMac mobile={mobile}/>} />
-                <Route path="/mac" element={<ExploreAllMac mobile={mobile}/>} />
-                <Route path="/ipad" element={<ExploreAllIpad mobile={mobile}/>} />
-                <Route path="/iphone" element={<ExploreAllIphone mobile={mobile}/>} />
-                <Route path="/tv-home" element={<TVandHome mobile={mobile}/>} />
-                <Route path="/register" element={<Register mobile={mobile}/>} />
-                <Route path="/sign-up" element={<SignUp mobile={mobile}/>} />
-                <Route path="/account" element={<Account mobile={mobile}/>} />
-                <Route path="/bag" element={<Bag mobile={mobile}/>} />
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/store" element={<Store/>}></Route>
+                <Route path="/store/buy-mac" element={<BuyMac/>}></Route>
+                <Route path="/store/buy-iphone" element={<BuyiPhone/>}></Route>
+                <Route path="/store/buy-ipad" element={<BuyiPad />}></Route>
+                <Route path="/store/buy-mac/:name" element={<BuyCastomizeMac />} />
+                <Route path="/store/buy-iphone/:name" element={<BuyCastomizeiPhone />} />
+                <Route path="/store/buy-ipad/:name" element={<BuyCastomizeiPad />} />
+                <Route path="/iphone-14-pro" element={<IPhone14Pro/>} />
+                <Route path="/ipad-pro" element={<ParallaxProvider><IPadPro /></ParallaxProvider>} />
+                <Route path="/imac" element={<IMac />} />
+                <Route path="/mac" element={<ExploreAllMac />} />
+                <Route path="/ipad" element={<ExploreAllIpad />} />
+                <Route path="/iphone" element={<ExploreAllIphone />} />
+                <Route path="/tv-home" element={<TVandHome />} />
+                <Route path="/register" element={<Register/>} />
+                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/bag" element={<Bag/>} />
             </Routes>
           </BrowserRouter>
         </Provider>

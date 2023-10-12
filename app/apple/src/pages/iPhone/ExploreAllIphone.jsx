@@ -3,8 +3,11 @@ import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import IphoneViewBanner from './Usable/IphoneViewBanner'
 import IPhonePanel from './Usable/IPhonePanels'
+import {useContext} from "react";
+import {MobileContext} from "../../context.jsx";
 
-const ExploreAllIphone=({mobile})=>{
+const ExploreAllIphone=()=>{
+    const mobile = useContext(MobileContext)
     return (
         <div style={{width:mobile.matches ? '100vw' : '99vw',overflow:'hidden',backgroundColor:'rgb(245,245,245)'}}>
             <Nav mobile={mobile}/>

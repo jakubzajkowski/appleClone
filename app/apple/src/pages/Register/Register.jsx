@@ -4,11 +4,13 @@ import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import CountryOptions from './CountryOptions'
 import {InputText,Select,RegisterBtn} from './Styled'
-import { useState } from 'react'
+import {useContext, useState} from 'react'
 import Validate from '../../helpers/Validate'
 import AxiosRegister from '../../helpers/AxiosRegister'
+import {MobileContext} from "../../context.jsx";
 
-const Register=({mobile})=>{
+const Register=()=>{
+    const mobile = useContext(MobileContext)
     const [firstName,setFirstName]=useState('')
     const [firstNameErr,setFirstNameErr]=useState('')
     const [lastName,setLastName]=useState('')

@@ -3,10 +3,11 @@ import  PropTypes  from 'prop-types'
 import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
 import {useSelector} from 'react-redux'
-import { useState } from 'react'
+import {useContext, useState} from 'react'
 import styled from 'styled-components'
 import AccountPanel from './AccountPanel'
 import { accountList } from './accountList'
+import {MobileContext} from "../../context.jsx";
 
 export const SignOutBtn=styled.button`
 border:none;
@@ -16,7 +17,8 @@ color:white;
 border-radius: 3rem;
 `
 
-const Account=({mobile})=>{
+const Account=()=>{
+    const mobile = useContext(MobileContext)
     const userData= useSelector(state=>state.user.data)
     const isLogged= useSelector(state=>state.user.logged)
     const isLoading= useSelector(state=>state.user.isLoading)
